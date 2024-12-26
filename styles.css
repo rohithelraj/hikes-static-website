@@ -1,0 +1,163 @@
+body {
+  margin: 0;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.toolbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 100vh;
+  background: #333;
+  z-index: 1000;
+}
+
+.nav-item {
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+  color: white;
+  text-decoration: none;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+}
+
+.main-content {
+  margin-left: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.image-section {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-section {
+  padding: 40px;
+  background: white;
+}
+
+.sub-images-grid img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.sub-image-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+ }
+ 
+ .sub-image-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+ }
+ 
+ .sub-image-card h4 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+ }
+ 
+ .sub-image-card p {
+  color: #666;
+  line-height: 1.5;
+ }
+ 
+ /*ReportList page */
+
+ .reports-grid {
+  margin-left: 80px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.report-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.report-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h2 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+}
+
+.date {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.continue-reading {
+  display: inline-block;
+  margin-top: 15px;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.continue-reading:hover {
+  text-decoration: underline;
+}
+/*pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 40px 0;
+}
+
+.page-btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+
+.page-btn.active {
+  background: #0066cc;
+  color: white;
+  border-color: #0066cc;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.reports-content {
+  margin-left: 80px;
+  padding: 40px;
+}
