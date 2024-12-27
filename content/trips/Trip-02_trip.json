@@ -1,0 +1,30 @@
+{
+  "Accommodation": "The high peaks\nof the Supramonte mountains also provided a safe haven with\ntheir elevated vantage point: it was here, on a plateau\noverlooking the sea, that the nuraghic village and sanctuary of\nSerra Orrios was constructed during the late Bronze Age.",
+  "Costs": "",
+  "CreationDate": "2024-12-27",
+  "Description": "Relatively inhospitable, the eastern coast has remained\nlargely unpopulated for much of its history.",
+  "EntryType": "Trip",
+  "Equipment": "",
+  "MainImagePath": "https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Trip-02/main.webp",
+  "RelatedEvents": [
+    {
+      "Description": "This rugged region was the ancient heart of the island, as\nattested by the wealth of archaeological sites found here,\nincluding the nuraghic village of Tiscali.",
+      "Name": "Hiking over the rocky mountain",
+      "URL": "lvely Link"
+    }
+  ],
+  "SubImages": [
+    {
+      "Description": "The communities here put up a strong\nresistance to invasion attempts by the Romans from the 3rd\ncentury BC onwards, leading the region to be called Barbagia –\nthe name derives from the Latin word barbaria, which was\nused by the Romans to refer to the remote areas here\ninhabited by “barbarians” (any culture that did not share the\nvalues and beliefs of the Roman civilization).",
+      "Name": "Tiscali",
+      "URL": "https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Trip-02/subImages/image2.webp"
+    }
+  ],
+  "Transportation": "The region’s early\nNeolithic inhabitants adapted the rocky terrain to their\nadvantage, using the natural caves that pit the karst\nlandscape of the Golfo di Orosei as dwellings.",
+  "TripEndDate": "23-04-2024",
+  "TripName": "Trip to Sardinia",
+  "TripStartDate": "16-04-2024",
+  "UniqueGoogleMapURL": "dfsdfsd",
+  "UniqueReportURL": "sdfsdfsdf",
+  "UniqueTripID": "Trip-02"
+}
