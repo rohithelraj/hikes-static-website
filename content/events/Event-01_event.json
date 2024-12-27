@@ -4,7 +4,8 @@
   "Description": "The varied terrain of Gennargentu provides a thriving habitat for a wide range of\nwildlife. \nStocky wild boars can be found throughout the park, as can foxes,\nweasels, dormice, hares and wild cats. \nMoufflon scale the rocky heights of some of\nGennargentu’s most seemingly inhospitable areas, while native Sardinian deer\ngraze in the forests. \nThe skies are populated by several different species of birds of\nprey, including the golden eagle, peregrine falcon, Eleonora’s falcon, buzzard and\nEurasian sparrowhawk.",
   "EntryType": "Event",
   "Equipment": "The remains of a nuraghic settlement were rediscovered here in the 19th\ncentury, by some woodcutters travelling over the mountain range that\ndominates the Lanaittu valley.",
-  "EventDate": "Hike to mars2",
+  "EventDate": "20-01-2025",
+  "EventName": "Hike to mars",
   "MainImagePath": "https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Event-01/main.webp",
   "RelatedTripURL": "dfsdfsdf",
   "SubImages": [
@@ -16,6 +17,6 @@
   ],
   "Transportation": "Hidden in the depths of an enormous chasm in Monte Tiscali,\nthis nuraghic village is Sardinia’s most intriguing – and most\nspectacularly located – prehistoric site.",
   "UniqueEventID": "Event-01",
-  "UniqueKomootURL": "44554434",
+  "UniqueKomootURL": "1435178622",
   "UniqueReportURL": "sdfsdfsdf"
 }

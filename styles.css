@@ -12,6 +12,9 @@ body {
   height: 100vh;
   background: #333;
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-item {
@@ -23,6 +26,7 @@ body {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   text-align: center;
+  line-height: 80px;
 }
 
 .main-content {
@@ -53,35 +57,35 @@ body {
   height: 300px;
   object-fit: cover;
 }
+
 .sub-image-card {
   background: white;
   border-radius: 8px;
   padding: 1rem;
   margin-bottom: 2rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
- }
- 
- .sub-image-card img {
+}
+
+.sub-image-card img {
   width: 100%;
   height: 300px;
   object-fit: cover;
   border-radius: 4px;
   margin-bottom: 1rem;
- }
- 
- .sub-image-card h4 {
+}
+
+.sub-image-card h4 {
   font-size: 1.2rem;
   margin: 0.5rem 0;
- }
- 
- .sub-image-card p {
+}
+
+.sub-image-card p {
   color: #666;
   line-height: 1.5;
- }
- 
- /*ReportList page */
+}
 
- .reports-grid {
+/* Reports List page */
+.reports-grid {
   margin-left: 80px;
   padding: 40px;
   display: grid;
@@ -131,7 +135,8 @@ body {
 .continue-reading:hover {
   text-decoration: underline;
 }
-/*pagination */
+
+/* Pagination */
 .pagination {
   display: flex;
   justify-content: center;
@@ -160,4 +165,169 @@ body {
 .reports-content {
   margin-left: 80px;
   padding: 40px;
+}
+
+/* Trip lists page */
+.trips-content {
+  margin-left: 80px;
+  padding: 40px;
+}
+
+.trips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.trips-grid .report-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.trips-grid .card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.trips-grid .continue-reading {
+  margin-top: auto;
+}
+
+/* Landing page */
+.landing-content {
+  margin-left: 80px;
+}
+
+.hero-banner {
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 60px 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.banner-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.banner-content h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem;
+}
+
+.banner-content .date {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin: 0 0 2rem;
+}
+
+.banner-link {
+  display: inline-block;
+  padding: 12px 24px;
+  background: white;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.banner-link:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.hero-image {
+  height: calc(100vh - 240px);
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Trip Page and Report Page */
+.map-link {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.map-link:hover {
+  text-decoration: underline;
+}
+
+.event-content {
+  padding: 1.5rem;
+}
+
+.event-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.event-link:hover {
+  text-decoration: underline;
+}
+
+.sub-images-container {
+  margin-top: 2rem;
+}
+
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.pagination-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.pagination-dot.active {
+  background: #0066cc;
+}
+
+.sub-image-item,
+.event-item {
+  transition: opacity 0.3s ease;
+}
+
+.sub-images-container img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.komoot-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #0066cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.komoot-link:hover {
+  background: #0052a3;
+}
+
+/* Event page */
+.komoot-frame {
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
