@@ -47,12 +47,12 @@ async function buildSite() {
   //Loading contents for Trips
   const tripsDir = path.join(__dirname, 'content', 'trips');
   const trips = fs.readdirSync(tripsDir)
-  .filter(file => file.endsWith('.json'))
-  .map(file => {
-    const filePath = path.join(tripsDir, file);
-    const content = JSON.parse(fs.readFileSync(filePath));
-    return { path: file.replace('.json', ''), content };
-  });
+    .filter(file => file.endsWith('.json'))
+    .map(file => {
+      const filePath = path.join(tripsDir, file);
+      const content = JSON.parse(fs.readFileSync(filePath));
+      return { path: file.replace('.json', ''), content };
+    });
   const distDir = path.join(__dirname, 'dist');
   if (!fs.existsSync(distDir)) {
     fs.mkdirSync(distDir);
@@ -144,7 +144,7 @@ fs.writeFileSync(
       `<!DOCTYPE html>
       <html>
         <head>
-          <title>${trip.content.Description.substring(0, 60)}...</title>
+          <title>${trip.content.TripName}</title>
           <link rel="stylesheet" href="./styles.css">
         </head>
         <body>
