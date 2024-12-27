@@ -22,7 +22,7 @@ function generateReportsPage(reports, currentPage, totalPages) {
     <html>
       <head>
         <title>Reports - Page ${currentPage}</title>
-        <link rel="stylesheet" href="./styles.css">
+        <link rel="stylesheet" href="../../styles.css">
       </head>
       <body>
         <div id="app">${listingHtml}</div>
@@ -31,53 +31,57 @@ function generateReportsPage(reports, currentPage, totalPages) {
 }
 
 async function buildSite() {
-  //Loading contents for Reports
   const contentDir = path.join(__dirname, 'content', 'reports');
-  //console.log('Content directory:', path.join(__dirname, 'content', 'reports'));
-  //console.log('Files:', fs.readdirSync(path.join(__dirname, 'content', 'reports')));
-  const reports = fs.readdirSync(contentDir)
-  .filter(file => file.endsWith('.json'))
-  .map(file => {
-    console.log('Reading file:', file);
-    const filePath = path.join(contentDir, file);
-    const content = JSON.parse(fs.readFileSync(filePath));
-    console.log('Content:', content);
-    return { path: file.replace('.json', ''), content };
+  const tripsContentDir = path.join(__dirname, 'content', 'trips');
+  
+  // Create directory structure
+  const distDir = path.join(__dirname, 'dist');
+  const reportListsDir = path.join(distDir, 'report', 'reportLists');
+  const reportsDir = path.join(distDir, 'report', 'reports');
+  const tripsDir = path.join(distDir, 'trip', 'trips');
+  
+  [distDir, reportListsDir, reportsDir, tripsDir].forEach(dir => {
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
   });
-  //Loading contents for Trips
-  const tripsDir = path.join(__dirname, 'content', 'trips');
-  const trips = fs.readdirSync(tripsDir)
+
+  // Load reports and trips
+  const reports = fs.readdirSync(contentDir)
     .filter(file => file.endsWith('.json'))
     .map(file => {
-      const filePath = path.join(tripsDir, file);
+      const filePath = path.join(contentDir, file);
       const content = JSON.parse(fs.readFileSync(filePath));
       return { path: file.replace('.json', ''), content };
     });
-  const distDir = path.join(__dirname, 'dist');
-  if (!fs.existsSync(distDir)) {
-    fs.mkdirSync(distDir);
+
+  const trips = fs.readdirSync(tripsContentDir)
+    .filter(file => file.endsWith('.json'))
+    .map(file => {
+      const filePath = path.join(tripsContentDir, file);
+      const content = JSON.parse(fs.readFileSync(filePath));
+      return { path: file.replace('.json', ''), content };
+    });
+
+  // Generate report list pages
+  const ITEMS_PER_PAGE = 6;
+  const totalPages = Math.ceil(reports.length / ITEMS_PER_PAGE);
+
+  for (let page = 1; page <= totalPages; page++) {
+    const startIdx = (page - 1) * ITEMS_PER_PAGE;
+    const endIdx = startIdx + ITEMS_PER_PAGE;
+    const pageReports = reports
+      .sort((a, b) => new Date(b.content.ReportDate) - new Date(a.content.ReportDate))
+      .slice(startIdx, endIdx)
+      .map(r => r.content);
+
+    fs.writeFileSync(
+      path.join(reportListsDir, page === 1 ? 'reportsList.html' : `reportsList${page}.html`),
+      generateReportsPage(pageReports, page, totalPages)
+    );
   }
 
-// Create a page for each set of reports
-// Inside buildSite function
-const ITEMS_PER_PAGE = 6;
-const totalPages = Math.ceil(reports.length / ITEMS_PER_PAGE);
-
-for (let page = 1; page <= totalPages; page++) {
-  const startIdx = (page - 1) * ITEMS_PER_PAGE;
-  const endIdx = startIdx + ITEMS_PER_PAGE;
-  const pageReports = reports
-    .sort((a, b) => new Date(b.content.ReportDate) - new Date(a.content.ReportDate))
-    .slice(startIdx, endIdx)
-    .map(r => r.content);
-
-  fs.writeFileSync(
-    path.join(distDir, page === 1 ? 'reportsList.html' : `reportsList${page}.html`),
-    generateReportsPage(pageReports, page, totalPages)
-  );
-}
-  fs.copyFileSync(path.join(__dirname, 'styles.css'), path.join(distDir, 'styles.css'));
-
+  // Generate index.html
   const indexHtml = `
     <!DOCTYPE html>
     <html>
@@ -88,7 +92,7 @@ for (let page = 1; page <= totalPages; page++) {
       <body>
         <div class="reports-list">
           ${reports.map(report => `
-            <a href="/${report.content.UniqueReportID}.html">
+            <a href="/report/reports/${report.content.UniqueReportID}.html">
               <div class="report-card">
                 <img src="${report.content.MainImagePath}" alt="${report.content.ReportName}">
                 <h2>${report.content.ReportName}</h2>
@@ -101,51 +105,34 @@ for (let page = 1; page <= totalPages; page++) {
     </html>
   `;
 
-  fs.writeFileSync(path.join(distDir, 'index.html'), indexHtml);
-
-  // Generate reports listing page
-  const listingHtml = renderToString(React.createElement(ReportsListPage, { 
-    reports: reports.map(r => r.content)
-  }));
-fs.writeFileSync(
-  path.join(distDir, 'reports.html'),
-  `<!DOCTYPE html>
-  <html>
-    <head>
-      <title>Reports</title>
-      <link rel="stylesheet" href="./styles.css">
-    </head>
-    <body>
-      <div id="app">${listingHtml}</div>
-    </body>
-  </html>`
-);
+  // Generate individual report pages
   for (const report of reports) {
     const html = renderToString(React.createElement(ReportPage, { content: report.content }));
     fs.writeFileSync(
-      path.join(distDir, `${report.content.UniqueReportID}.html`),
+      path.join(reportsDir, `${report.content.UniqueReportID}.html`),
       `<!DOCTYPE html>
       <html>
         <head>
           <title>${report.content.ReportName}</title>
-          <link rel="stylesheet" href="./styles.css">
+          <link rel="stylesheet" href="../../styles.css">
         </head>
         <body>
           <div id="app">${html}</div>
         </body>
       </html>`
     );
-    console.log('Generated HTML:', html);
   }
+
+  // Generate trip pages
   for (const trip of trips) {
     const html = renderToString(React.createElement(TripPage, { content: trip.content }));
     fs.writeFileSync(
-      path.join(distDir, `${trip.content.UniqueTripID}.html`),
+      path.join(tripsDir, `${trip.content.UniqueTripID}.html`),
       `<!DOCTYPE html>
       <html>
         <head>
           <title>${trip.content.TripName}</title>
-          <link rel="stylesheet" href="./styles.css">
+          <link rel="stylesheet" href="../../styles.css">
         </head>
         <body>
           <div id="app">${html}</div>
@@ -153,6 +140,10 @@ fs.writeFileSync(
       </html>`
     );
   }
+
+  // Copy styles and generate index
+  fs.copyFileSync(path.join(__dirname, 'styles.css'), path.join(distDir, 'styles.css'));
+  fs.writeFileSync(path.join(distDir, 'index.html'), indexHtml);
 }
 
 buildSite();
