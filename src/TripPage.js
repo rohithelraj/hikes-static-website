@@ -20,7 +20,7 @@ const TripPage = ({ content }) => React.createElement('div', { className: 'page-
       })
     ),
     React.createElement('div', { className: 'content-section' },
-      React.createElement('h1', { className: 'trip-title' }, 'Trip Details'),
+      React.createElement('h1', { className: 'trip-title' }, content.TripName),
       
       React.createElement('div', { className: 'info-item' },
         React.createElement('h3', null, 'Dates'),
