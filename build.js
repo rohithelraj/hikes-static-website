@@ -7,6 +7,7 @@ const fs = require('fs');
 const path = require('path');
 const { ReportPage } = require('./src/ReportPage');
 const { ReportsListPage } = require('./src/ReportsListPage');
+const { TripPage } = require('./src/TripPage');
 
 function generateReportsPage(reports, currentPage, totalPages) {
   const listingHtml = renderToString(
@@ -30,9 +31,10 @@ function generateReportsPage(reports, currentPage, totalPages) {
 }
 
 async function buildSite() {
+  //Loading contents for Reports
   const contentDir = path.join(__dirname, 'content', 'reports');
-  console.log('Content directory:', path.join(__dirname, 'content', 'reports'));
-  console.log('Files:', fs.readdirSync(path.join(__dirname, 'content', 'reports')));
+  //console.log('Content directory:', path.join(__dirname, 'content', 'reports'));
+  //console.log('Files:', fs.readdirSync(path.join(__dirname, 'content', 'reports')));
   const reports = fs.readdirSync(contentDir)
   .filter(file => file.endsWith('.json'))
   .map(file => {
@@ -40,6 +42,15 @@ async function buildSite() {
     const filePath = path.join(contentDir, file);
     const content = JSON.parse(fs.readFileSync(filePath));
     console.log('Content:', content);
+    return { path: file.replace('.json', ''), content };
+  });
+  //Loading contents for Trips
+  const tripsDir = path.join(__dirname, 'content', 'trips');
+  const trips = fs.readdirSync(tripsDir)
+  .filter(file => file.endsWith('.json'))
+  .map(file => {
+    const filePath = path.join(tripsDir, file);
+    const content = JSON.parse(fs.readFileSync(filePath));
     return { path: file.replace('.json', ''), content };
   });
   const distDir = path.join(__dirname, 'dist');
@@ -125,6 +136,22 @@ fs.writeFileSync(
       </html>`
     );
     console.log('Generated HTML:', html);
+  }
+  for (const trip of trips) {
+    const html = renderToString(React.createElement(TripPage, { content: trip.content }));
+    fs.writeFileSync(
+      path.join(distDir, `${trip.content.UniqueTripID}.html`),
+      `<!DOCTYPE html>
+      <html>
+        <head>
+          <title>${trip.content.Description.substring(0, 60)}...</title>
+          <link rel="stylesheet" href="./styles.css">
+        </head>
+        <body>
+          <div id="app">${html}</div>
+        </body>
+      </html>`
+    );
   }
 }
 
