@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+      <html>
+        <head>
+          <title>Easter Trip to Sardinia </title>
+          <link rel="stylesheet" href="../../styles.css">
+        </head>
+        <body>
+          <div id="app"><div class="page-layout"><script>
+          document.addEventListener('DOMContentLoaded', function() {
+            function showImage(index) {
+              document.querySelectorAll('.sub-image-item').forEach(item => {
+                item.style.display = 'none';
+              });
+              document.querySelectorAll('.image-dot').forEach(dot => {
+                dot.classList.remove('active');
+              });
+              document.querySelector('.sub-image-item[data-index="' + index + '"]').style.display = 'block';
+              document.querySelector('.image-dot[data-index="' + index + '"]').classList.add('active');
+            }
+
+            function showEvent(index) {
+              document.querySelectorAll('.event-item').forEach(item => {
+                item.style.display = 'none';
+              });
+              document.querySelectorAll('.event-dot').forEach(dot => {
+                dot.classList.remove('active');
+              });
+              document.querySelector('.event-item[data-index="' + index + '"]').style.display = 'block';
+              document.querySelector('.event-dot[data-index="' + index + '"]').classList.add('active');
+            }
+
+            document.querySelectorAll('.image-dot').forEach(dot => {
+              dot.addEventListener('click', function() {
+                showImage(this.getAttribute('data-index'));
+              });
+            });
+
+            document.querySelectorAll('.event-dot').forEach(dot => {
+              dot.addEventListener('click', function() {
+                showEvent(this.getAttribute('data-index'));
+              });
+            });
+          });
+        </script><div class="toolbar"><nav><a href="../../index.html" class="nav-item">Home</a><a href="../tripLists/tripsList.html" class="nav-item">Trips</a><a href="../../event/eventLists/eventsList.html" class="nav-item">Events</a><a href="../../report/reportLists/reportsLists.html" class="nav-item">Reports</a></nav></div><div class="main-content"><div class="image-section"><img src="https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Trip-2/main.webp" alt="To remnisce our trip to crete last year, we will spent our easter in the second biggest island in the mediterranean.&lt;br&gt;Sardinia.&lt;br&gt;Concrete plans will follow shortly.&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#0df88a&quot;&gt;&lt;b&gt;Members:&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;i&gt;&lt;font color=&quot;#fd4e4e&quot;&gt;Confirmed:&lt;/font&gt;&lt;/i&gt;&lt;br&gt;1. Sam&lt;br&gt;2. Amalia&lt;br&gt;3. Rohith&amp;nbsp;&lt;br&gt;4. Lyban&lt;br&gt;5. Pranay&lt;div&gt;6. Soumil&amp;nbsp;&lt;/div&gt;&lt;div&gt;7. Sophie&lt;br&gt;&lt;div&gt;&lt;i&gt;&lt;font color=&quot;#fd4e4e&quot;&gt;Unconfirmed:&lt;/font&gt;&lt;/i&gt;&lt;br&gt;8. Aitor ?&lt;br&gt;9. Alfredo ?&lt;br&gt;10. Lea ?&lt;br&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" class="main-image"/></div><div class="content-section"><h1 class="trip-title">Easter Trip to Sardinia </h1><div class="info-item"><h3>Location</h3><a href="https://www.google.com/maps/d/viewer?mid=1HFXILaiMjXNeUwhYFlP_TjgLuevq_MI" target="_blank" rel="noopener noreferrer" class="map-link">📍 View on Google Maps</a></div><div class="info-item"><h3>Dates</h3><p>16-04-2025 - 23-04-2025</p></div><div class="info-item"><h3>Description</h3><div>To remnisce our trip to crete last year, we will spent our easter in the second biggest island in the mediterranean.<br>Sardinia.<br>Concrete plans will follow shortly.<br><br><font color="#0df88a"><b>Members:<br></b></font><i><font color="#fd4e4e">Confirmed:</font></i><br>1. Sam<br>2. Amalia<br>3. Rohith&nbsp;<br>4. Lyban<br>5. Pranay<div>6. Soumil&nbsp;</div><div>7. Sophie<br><div><i><font color="#fd4e4e">Unconfirmed:</font></i><br>8. Aitor ?<br>9. Alfredo ?<br>10. Lea ?<br><br><div><br><br><br></div></div></div></div></div><div class="info-item"><h3>Accommodation</h3><div><u style=""><font color="#5055f7">Accomodation near Cagliari&nbsp;</font></u><br><a href="https://www.booking.com/Share-YCVd3H" target="_blank">Villa in Chia&nbsp;</a><br><u style=""><font color="#4f54f3">Accomodation near Olbia</font></u><br><a href="https://www.booking.com/Share-kLOhzY" target="_blank">Villa in Loiri Porto San Paolo</a><br></div></div><div class="info-item"><h3>Transportation</h3><div><u><b><font color="#904ea2">16 April 2025</font><br></b></u><i><b>Train<br></b></i><font color="#fe7b34">11:21</font>&nbsp;<font color="#f72626">Düsseldorf Hbf&nbsp;</font>&nbsp;<font color="#214e09">[ICE 625, Platform 16]&nbsp;</font>-&gt;&nbsp;<font color="#fd7b35">12:33</font>&nbsp;<span>Frankfurt Flughafen Fernbahnhof</span><i><b><br>Flight</b></i><br><font color="#fe7b34">15:40</font> <font color="#f72626">Frankfurt Flughafen</font> <font color="#1f4908">[Lufthansa] </font>-&gt; <font color="#fd7b35">17:35</font> <font color="#ee2b2b">Olbia</font><br><u><font color="#8d4ba0">23. April 2025</font></u><i><span><br>Flight</span></i><br><font color="#fb7c37">18:30</font> <font color="#f22c2c">Olbia</font><font color="#47edf0">&nbsp;</font><font color="#1d4408">[Lufthansa]</font><font color="#47edf0"> </font>-&gt; <font color="#fb7832">20:25</font> <font color="#f83030">Frankfurt Flughafen<br></font><i><span>Train<br></span></i><font color="#fe7b34">21:23</font>&nbsp;<span>Frankfurt Flughafen Fernbahnhof</span>&nbsp;<font color="#1f3f0e">[ICE 526, Platform 7]&nbsp;</font>-&gt;&nbsp;<font color="#fd7b35">22:41</font>&nbsp;<span>Düsseldorf Hbf</span><font color="#f83030"></font></div></div><div class="info-item"><h3>Equipment</h3><div></div></div><div class="info-item"><h3>Costs</h3><div>119,9 € per person from 16. to 19. April 2025, apartment in&nbsp;Loiri Porto San Paolo<br>111,8€ per person from 19. to 23 April 2025, villa in Chia<br>180€ for the flight, to and from Sardinia.<br>132,31€ per person for the car.<br>50€ per person for benzin.<br>200€ per person for food.<br><hr>Total Cost -&gt;&nbsp;<font color="#fb1818">794,31€</font><br><br></div></div><div class="sub-images-container"><div class="sub-images-wrapper"><div class="sub-image-item" data-index="0" style="display:block"><div class="sub-image-card"><img src="https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Trip-2/subImages/image2.webp" alt="Codula di Luna"/><h4>Codula di Luna</h4><p>Much of Sardinia’s landscape is made up of exposed granite rock, often
+resembling something from another planet. Make like Neil Armstrong as
+you venture into the Codula di Luna – the “Valley of the Moon” – on one of
+the island’s top hiking trails.</p></div></div><div class="sub-image-item" data-index="1" style="display:none"><div class="sub-image-card"><img src="https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Trip-2/subImages/image3.webp" alt="La Giara di Gesturi"/><h4>La Giara di Gesturi</h4><p>Famed for its herds of wild horses, the lush plateau of La Giara di Gesturi
+is a captivating landscape for trekkers. Formed by lava flows around 3
+million years ago, the area is peppered with clusters of ancient, crooked
+oak and cork trees, interspersed by sturdy maquis that’s especially
+beautiful in the spring.</p></div></div><div class="sub-image-item" data-index="2" style="display:none"><div class="sub-image-card"><img src="https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Trip-2/subImages/image4.webp" alt="Gennargentu National Park"/><h4>Gennargentu National Park</h4><p>With a rugged landscape that encompasses forbidding
+mountains, verdant pastures, craggy plateaus and ancient
+forests – not to mention a spectacular stretch of coastline
+along the Golfo di Orosei – this park is a natural haven for
+wildlife and walkers alike.</p></div></div><div class="sub-image-item" data-index="3" style="display:none"><div class="sub-image-card"><img src="https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Trip-2/subImages/image5.webp" alt="The golden dunes of Piscinas beach"/><h4>The golden dunes of Piscinas beach</h4><p>Stretching for 7 km (4 miles), the golden sands at Piscinas
+beach form an undulating dunescape of wild beauty that is
+ever changing with the wind.</p></div></div></div><div class="pagination-dots"><button class="pagination-dot image-dot active" data-index="0"></button><button class="pagination-dot image-dot " data-index="1"></button><button class="pagination-dot image-dot " data-index="2"></button><button class="pagination-dot image-dot " data-index="3"></button></div></div></div></div></div></div>
+        </body>
+      </html>
