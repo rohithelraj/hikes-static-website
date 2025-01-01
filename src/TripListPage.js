@@ -50,7 +50,7 @@ const TripListPage = ({ trips, currentPage, totalPages }) => {
                 trip.Description ? `${trip.Description.substring(0, 150)}...` : ''
               ),
               React.createElement('a', { 
-                href: `/trip/trips/${trip.TripName.replace(/[^a-zA-Z0-9]/g, '-')}-${trip.UniqueTripID}.html`,
+                href: `../trips/${trip.TripName.replace(/[^a-zA-Z0-9]/g, '-')}-${trip.UniqueTripID}.html`,
                 className: 'continue-reading'
               }, 'Continue Reading')
             )

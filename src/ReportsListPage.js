@@ -31,10 +31,10 @@ const ReportsListPage = ({ reports, currentPage, totalPages }) => {
   return React.createElement('div', { className: 'page-layout' },
     React.createElement('div', { className: 'toolbar' },
       React.createElement('nav', null,
-        React.createElement('a', { href: '/', className: 'nav-item' }, 'Home'),
-        React.createElement('a', { href: '/trips', className: 'nav-item' }, 'Trips'),
-        React.createElement('a', { href: '/events', className: 'nav-item' }, 'Events'),
-        React.createElement('a', { href: '/reports', className: 'nav-item' }, 'Reports')
+        React.createElement('a', { href: '../../index.html', className: 'nav-item' }, 'Home'),
+        React.createElement('a', { href: '../../trip/tripLists/tripsList.html', className: 'nav-item' }, 'Trips'),
+        React.createElement('a', { href: '../../event/eventLists/eventsList.html', className: 'nav-item' }, 'Events'),
+        React.createElement('a', { href: '../../report/reportLists/reportsList.html', className: 'nav-item' }, 'Reports')
       )
     ),
     React.createElement('div', { className: 'reports-content' },
@@ -53,7 +53,7 @@ const ReportsListPage = ({ reports, currentPage, totalPages }) => {
                   report.Description ? `${report.Description.substring(0, 150)}...` : ''
                 ),
                 React.createElement('a', { 
-                  href: `/report/reports/${report.ReportName.replace(/[^a-zA-Z0-9]/g, '-')}-${report.UniqueReportID}.html`,
+                  href: `../reports/${report.ReportName.replace(/[^a-zA-Z0-9]/g, '-')}-${report.UniqueReportID}.html`,
                   className: 'continue-reading'
                 }, 'Continue Reading')
               )
