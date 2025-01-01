@@ -62,9 +62,9 @@ const TripPage = ({ content }) => {
         })
       ),
       React.createElement('div', { className: 'content-section' },
-        React.createElement('h1', { className: 'trip-title' }, content.TripName),
+        React.createElement('h1', { className: 'trip-title  title-padding' }, content.TripName),
         
-        content.UniqueGoogleMapURL && React.createElement('div', { className: 'info-item' },
+        content.UniqueGoogleMapURL && React.createElement('div', { className: 'info-item  title-padding' },
           React.createElement('h3', null, 'Location'),
           React.createElement('a', {
             href: content.UniqueGoogleMapURL,
@@ -74,40 +74,41 @@ const TripPage = ({ content }) => {
           }, '📍 View on Google Maps')
         ),
         
-        React.createElement('div', { className: 'info-item' },
+        React.createElement('div', { className: 'info-item  title-padding' },
+    
           React.createElement('h3', null, 'Dates'),
           React.createElement('p', null, `${content.TripStartDate} - ${content.TripEndDate}`)
         ),
         
-        React.createElement('div', { className: 'info-item' },
+        React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Description'),
           React.createElement('div', { 
             dangerouslySetInnerHTML: { __html: content.Description } 
           })
         ),
         
-        React.createElement('div', { className: 'info-item' },
+        React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Accommodation'),
           React.createElement('div', { 
             dangerouslySetInnerHTML: { __html: content.Accommodation } 
           })
         ),
         
-        React.createElement('div', { className: 'info-item' },
+        React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Transportation'),
           React.createElement('div', { 
             dangerouslySetInnerHTML: { __html: content.Transportation } 
           })
         ),
         
-        React.createElement('div', { className: 'info-item' },
+        React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Equipment'),
           React.createElement('div', { 
             dangerouslySetInnerHTML: { __html: content.Equipment } 
           })
         ),
         
-        React.createElement('div', { className: 'info-item' },
+        React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Costs'),
           React.createElement('div', { 
             dangerouslySetInnerHTML: { __html: content.Costs } 
@@ -119,7 +120,7 @@ const TripPage = ({ content }) => {
             ...content.SubImages.map((img, index) => 
               React.createElement('div', { 
                 key: index,
-                className: 'sub-image-item',
+                className: 'sub-image-item title-padding',
                 'data-index': index,
                 style: { display: index === 0 ? 'block' : 'none' }
               },
@@ -131,7 +132,7 @@ const TripPage = ({ content }) => {
               )
             )
           ),
-          React.createElement('div', { className: 'pagination-dots' },
+          React.createElement('div', { className: 'pagination-dots title-padding' },
             ...content.SubImages.map((_, index) =>
               React.createElement('button', {
                 key: index,
@@ -143,8 +144,8 @@ const TripPage = ({ content }) => {
         ),
         
         content.RelatedEvents?.length > 0 && React.createElement('div', { className: 'related-events' },
-          React.createElement('h3', null, 'Related Events'),
-          React.createElement('div', { className: 'events-wrapper' },
+          React.createElement('h3', {className: 'title-padding'}, 'Related Events'),
+          React.createElement('div', { className: 'events-wrapper title-padding' },
             ...content.RelatedEvents.map((event, index) =>
               React.createElement('div', {
                 key: index,
@@ -164,7 +165,7 @@ const TripPage = ({ content }) => {
                 )
               )
             ),
-            React.createElement('div', { className: 'pagination-dots' },
+            React.createElement('div', { className: 'pagination-dots title-padding' },
               ...content.RelatedEvents.map((_, index) =>
                 React.createElement('button', {
                   key: index,

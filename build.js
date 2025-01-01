@@ -289,14 +289,14 @@ async function buildSite() {
             </nav>
           </div>
           <div class="landing-content">
-            <div class="hero-banner">
-              <div class="banner-content">
+            <div class="hero-banner  title-padding">
+              <div class="banner-content  title-padding">
                 <h1>${featuredItem.title}</h1>
                 <p class="date">${featuredItem.displayDate}</p>
                 <a href="${featuredItem.url}" class="banner-link">View Details</a>
               </div>
             </div>
-            <div class="hero-image">
+            <div class="hero-image  title-padding">
               <img src="${featuredItem.mainImage}" alt="${featuredItem.title}">
             </div>
           </div>

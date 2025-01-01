@@ -37,12 +37,12 @@ const HikeListsPage = ({ hikes, currentPage, totalPages }) => {
         React.createElement('a', { href: '../../report/reportLists/reportsList.html', className: 'nav-item' }, 'Reports')
       )
     ),
-    React.createElement('div', { className: 'hikes-content' },
-      React.createElement('div', { className: 'hikes-grid' },
+    React.createElement('div', { className: 'trips-content' },
+      React.createElement('div', { className: 'trips-grid' },
         sortedHikes
           .slice(0, ITEMS_PER_PAGE)
           .map(hike => 
-            React.createElement('article', { className: 'hike-card', key: hike.UniqueEventID },
+            React.createElement('article', { className: 'report-card', key: hike.UniqueEventID },
               React.createElement('div', { className: 'card-image' },
                 React.createElement('img', { src: hike.MainImagePath, alt: hike.EventName })
               ),

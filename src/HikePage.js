@@ -37,7 +37,7 @@ const HikePage = ({ content }) => {
     }),
     React.createElement(Toolbar),
     React.createElement('div', { className: 'main-content' },
-      React.createElement('div', { className: 'image-section' },
+      React.createElement('div', { className: 'image-section title-padding' },
         React.createElement('img', { 
           src: content.MainImagePath, 
           alt: content.EventName,
@@ -45,35 +45,51 @@ const HikePage = ({ content }) => {
         })
       ),
       React.createElement('div', { className: 'content-section' },
-        React.createElement('h1', { className: 'event-title' }, content.EventName),
+        React.createElement('h1', { className: 'event-title title-padding' }, content.EventName),
         
-        React.createElement('div', { className: 'info-item' },
+        React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Date'),
           React.createElement('p', null, content.EventDate)
         ),
-        
-        React.createElement('div', { className: 'info-item' },
+        content.UniqueKomootURL && React.createElement('div', { className: 'info-item title-padding' },
+          React.createElement('h3', null, 'Hiking Path'),
+          React.createElement('a', {
+            href: content.UniqueKomootURL,
+            target: '_blank',
+            rel: 'noopener noreferrer',
+            className: 'map-link '
+          }, '📍 View on Komoot')
+        ),
+        React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Description'),
-          React.createElement('p', null, content.Description)
+          React.createElement('div', { 
+                      dangerouslySetInnerHTML: { __html: content.Description } 
+                    })
         ),
         
-        React.createElement('div', { className: 'info-item' },
+        React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Transportation'),
-          React.createElement('p', null, content.Transportation)
+          React.createElement('div', { 
+                      dangerouslySetInnerHTML: { __html: content.Transportation } 
+                    })
         ),
         
-        React.createElement('div', { className: 'info-item' },
+        React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Equipment'),
-          React.createElement('p', null, content.Equipment)
+          React.createElement('div', { 
+                      dangerouslySetInnerHTML: { __html: content.Equipment } 
+                    })
         ),
         
-        React.createElement('div', { className: 'info-item' },
+        React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Costs'),
-          React.createElement('p', null, content.Costs)
+          React.createElement('div', { 
+                      dangerouslySetInnerHTML: { __html: content.Costs } 
+                    })
         ),
         
-        content.SubImages?.length > 0 && React.createElement('div', { className: 'sub-images-container' },
-          React.createElement('div', { className: 'sub-images-wrapper' },
+        content.SubImages?.length > 0 && React.createElement('div', { className: 'sub-images-container title-padding' },
+          React.createElement('div', { className: 'sub-images-wrapper title-padding' },
             ...content.SubImages.map((img, index) => 
               React.createElement('div', { 
                 key: index,
@@ -89,7 +105,7 @@ const HikePage = ({ content }) => {
               )
             )
           ),
-          React.createElement('div', { className: 'pagination-dots' },
+          React.createElement('div', { className: 'pagination-dots title-padding' },
             ...content.SubImages.map((_, index) =>
               React.createElement('button', {
                 key: index,
@@ -99,20 +115,7 @@ const HikePage = ({ content }) => {
             )
           )
         ),
-
-        content.UniqueKomootURL && React.createElement('div', { className: 'info-item' },
-          React.createElement('h3', null, 'Route Map'),
-          React.createElement('iframe', {
-            src: `https://www.komoot.com/de-de/tour/${content.UniqueKomootURL}`,
-            width: '100%',
-            height: '700',
-            frameBorder: '0',
-            scrolling: 'no',
-            className: 'komoot-frame'
-          })
-        ),
-        
-        React.createElement('div', { className: 'related-links' },
+        React.createElement('div', { className: 'related-links title-padding' },
           React.createElement('h3', null, 'Related Links'),
           React.createElement('div', { className: 'links' },
             content.UniqueReportURL && React.createElement('a', { 

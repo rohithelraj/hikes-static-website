@@ -30,7 +30,7 @@ const TripListPage = ({ trips, currentPage, totalPages }) => {
       React.createElement('nav', null,
         React.createElement('a', { href: '../../index.html', className: 'nav-item' }, 'Home'),
         React.createElement('a', { href: '../tripLists/tripsList.html', className: 'nav-item' }, 'Trips'),
-        React.createElement('a', { href: '../../hikes/hikeLists/hikeList.html', className: 'nav-item' }, 'Hikes'),
+        React.createElement('a', { href: '../../hike/hikeLists/hikesList.html', className: 'nav-item' }, 'Hikes'),
         React.createElement('a', { href: '../../report/reportLists/reportsList.html', className: 'nav-item' }, 'Reports')
       )
     ),
@@ -46,7 +46,7 @@ const TripListPage = ({ trips, currentPage, totalPages }) => {
               React.createElement('p', { className: 'date' }, 
                 `${trip.TripStartDate} - ${trip.TripEndDate}`
               ),
-              React.createElement('p', { className: 'description' }, 
+              React.createElement('div', { className: 'description' }, 
                 trip.Description ? `${trip.Description.substring(0, 150)}...` : ''
               ),
               React.createElement('a', { 
