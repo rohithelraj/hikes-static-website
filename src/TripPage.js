@@ -81,27 +81,37 @@ const TripPage = ({ content }) => {
         
         React.createElement('div', { className: 'info-item' },
           React.createElement('h3', null, 'Description'),
-          React.createElement('p', null, content.Description)
+          React.createElement('div', { 
+            dangerouslySetInnerHTML: { __html: content.Description } 
+          })
         ),
         
         React.createElement('div', { className: 'info-item' },
           React.createElement('h3', null, 'Accommodation'),
-          React.createElement('p', null, content.Accommodation)
+          React.createElement('div', { 
+            dangerouslySetInnerHTML: { __html: content.Accommodation } 
+          })
         ),
         
         React.createElement('div', { className: 'info-item' },
           React.createElement('h3', null, 'Transportation'),
-          React.createElement('p', null, content.Transportation)
+          React.createElement('div', { 
+            dangerouslySetInnerHTML: { __html: content.Transportation } 
+          })
         ),
         
         React.createElement('div', { className: 'info-item' },
           React.createElement('h3', null, 'Equipment'),
-          React.createElement('p', null, content.Equipment)
+          React.createElement('div', { 
+            dangerouslySetInnerHTML: { __html: content.Equipment } 
+          })
         ),
         
         React.createElement('div', { className: 'info-item' },
           React.createElement('h3', null, 'Costs'),
-          React.createElement('p', null, content.Costs)
+          React.createElement('div', { 
+            dangerouslySetInnerHTML: { __html: content.Costs } 
+          })
         ),
         
         content.SubImages?.length > 0 && React.createElement('div', { className: 'sub-images-container' },

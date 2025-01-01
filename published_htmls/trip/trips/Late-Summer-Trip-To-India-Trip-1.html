@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Late Summer Trip To India</title>
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="page-layout">
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            function showImage(index) {
+              document.querySelectorAll(".sub-image-item").forEach((item) => {
+                item.style.display = "none";
+              });
+              document.querySelectorAll(".image-dot").forEach((dot) => {
+                dot.classList.remove("active");
+              });
+              document.querySelector(
+                '.sub-image-item[data-index="' + index + '"]'
+              ).style.display = "block";
+              document
+                .querySelector('.image-dot[data-index="' + index + '"]')
+                .classList.add("active");
+            }
+
+            function showEvent(index) {
+              document.querySelectorAll(".event-item").forEach((item) => {
+                item.style.display = "none";
+              });
+              document.querySelectorAll(".event-dot").forEach((dot) => {
+                dot.classList.remove("active");
+              });
+              document.querySelector(
+                '.event-item[data-index="' + index + '"]'
+              ).style.display = "block";
+              document
+                .querySelector('.event-dot[data-index="' + index + '"]')
+                .classList.add("active");
+            }
+
+            document.querySelectorAll(".image-dot").forEach((dot) => {
+              dot.addEventListener("click", function () {
+                showImage(this.getAttribute("data-index"));
+              });
+            });
+
+            document.querySelectorAll(".event-dot").forEach((dot) => {
+              dot.addEventListener("click", function () {
+                showEvent(this.getAttribute("data-index"));
+              });
+            });
+          });
+        </script>
+        <div class="toolbar">
+          <nav>
+            <a href="../../index.html" class="nav-item">Home</a
+            ><a href="../tripLists/tripsList.html" class="nav-item">Trips</a
+            ><a href="../../event/eventLists/eventsList.html" class="nav-item">Events</a
+            ><a
+              href="../../report/reportLists/reportsList.html"
+              class="nav-item"
+              >Reports</a
+            >
+          </nav>
+        </div>
+        <div class="main-content">
+          <div class="image-section">
+            <img
+              src="https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Trip-1/main.webp"
+              alt='This is the trip, we were waiting for, in a short two weeks, we&amp;nbsp; will go through two south indian states of Kerala and Karnataka, exploring its culture cusine and people.&lt;br&gt;&lt;div&gt;&lt;font color="#f50505"&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color="#f50505"&gt;Day-1 (&lt;/font&gt;&lt;span&gt;August 3, 2025; Sunday&lt;/span&gt;&lt;font color="#f50505"&gt;)&lt;br&gt;&lt;/font&gt;&lt;br&gt;We fly from&amp;nbsp;&lt;font color="#f9e71f"&gt;Frankfurt&lt;/font&gt;&amp;nbsp;to &lt;font color="#ecf75f"&gt;Cochin (Kochi)&lt;/font&gt;, on Sunday with &lt;font color="#eff962"&gt;Qatar Airways&lt;/font&gt;.&lt;br&gt;&lt;font color="#63fdeb"&gt;QR68 - Qatar Airways&lt;/font&gt;&lt;br&gt;&lt;font color="#5e5bf5"&gt;17:15&lt;/font&gt; &lt;font color="#73ff61"&gt;Frankfurt Frankfurt International Airport (FRA)&lt;/font&gt;&amp;nbsp; -&amp;gt;&amp;nbsp;&lt;font color="#f4a4b0"&gt;&amp;nbsp;5h 55m Duration&lt;/font&gt;&lt;br&gt;&lt;font color="#5d5bf1"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 00:10+1&lt;/font&gt; &lt;font color="#71f75f"&gt;Doha Hamad International Airport (DOH)&lt;br&gt;&lt;/font&gt;&lt;font color="#6ffbdf"&gt;QR514 - Qatar Airways&lt;/font&gt;&lt;br&gt;&lt;font color="#6c59f7"&gt;01:45&lt;/font&gt;&lt;font color="#6bed5a"&gt; Doha Hamad International Airport (DOH)&lt;/font&gt; -&amp;gt;&lt;font color="#6663fd"&gt;&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;span&gt;&lt;font color="#f877c9"&gt;4h 30m Duration&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font color="#6663fd"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 08:45 &lt;/font&gt;&lt;font color="#6ff85d"&gt;Kochi Kochi International Airport (COK)&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;hr&gt;&lt;font color="#f10404"&gt;Day-2 (&lt;/font&gt;&lt;span&gt;August 4, 2025; Monday&lt;/span&gt;&lt;font color="#f10404"&gt;)&lt;br&gt;&lt;/font&gt;We arrive in&amp;nbsp;&lt;font color="#ffed24"&gt;Cochin International Airport on&amp;nbsp;&lt;/font&gt;, at 8:45 AM.&amp;nbsp;&lt;div&gt;We stay the night in Kochi, perhaps also expolre the Mattanchery old town.&lt;/div&gt;&lt;br&gt;&lt;hr&gt;&lt;font color="#f20202"&gt;Day-3(&lt;/font&gt;&lt;span&gt;August 5, 2025; Tuesday&lt;/span&gt;&lt;font color="#f20202"&gt;)&lt;/font&gt;&lt;br&gt;We visit Kerala Folklore Museum and Kerala Kalamandalam&lt;br&gt;&lt;hr&gt;&lt;font color="#f90606"&gt;Day-4(&lt;/font&gt;&lt;span&gt;August 6, 2025; Wednesday&lt;/span&gt;&lt;font color="#f90606"&gt;)&lt;br&gt;&lt;/font&gt;We travel to the nilgiri hills, on the eastern side of Kerala, by car.&lt;br&gt;We will chill this day in the resort, where we stay.&lt;br&gt;For the forthcoming days , we will eyplore, the Periyar Tiger Reserve.&lt;br&gt;Periyar Tiger Reserve&amp;nbsp;-&amp;gt;&amp;nbsp;&lt;a href="https://www.keralatourism.org/images/eco-tourism/e-brochures/periyar.pdf" target="_blank"&gt;Information PDF&lt;/a&gt;&lt;br&gt;&lt;hr&gt;&lt;font color="#f50505"&gt;Day-5 (&lt;/font&gt;&lt;span&gt;August 7, 2025; Thursday&lt;/span&gt;&lt;font color="#f50505"&gt;)&lt;/font&gt;&lt;br&gt;&lt;font color="#58f943"&gt;Border Hiking &lt;/font&gt;&lt;br&gt;This is a day-long hiking programme within the Periyar Tiger Reserve. The undulating terrains and altitudinal hiking of 900 m to 1300 m will give you the glimpse of the lofty slopes bordering the region. &lt;br&gt;Gaur, sloth bear and elephants are often sighted apart from birds and butterflies from here. &lt;br&gt;This programme is open to a maximum of 10 tourists in 2 different groups. The trekkers along with two guides participate in the programme which starts at 08.00 hrs and ends in the evening. &lt;br&gt;The package includes food also.&lt;br&gt;Option 1: &lt;font color="#fcff47"&gt;Throndiyar&amp;nbsp; -&amp;gt;&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;a href="https://www.periyartigerreserve.org/Program/60b39c92a5380c329b3674e4?name=Border%20Hiking%20-%20Thondiyar" target="_blank"&gt;Link&lt;/a&gt;&lt;br&gt;Option 2: &lt;font color="#fcff4d"&gt;Brandipara&amp;nbsp; - &amp;gt;&amp;nbsp;&lt;/font&gt;&lt;a href="https://www.periyartigerreserve.org/Program/60b39d8ea5380c329b3674e9?name=Border%20Hiking%20-%20Brandipara" target="_blank"&gt;Link&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;hr&gt;&lt;font color="#f70202"&gt;Day-6 (&lt;/font&gt;&lt;span&gt;August 8, 2025; Friday&lt;/span&gt;&lt;font color="#f70202"&gt;)&lt;/font&gt;&lt;br&gt;&lt;span&gt;Border Hiking / Bamboo Rafting&lt;br&gt;&lt;/span&gt;Option -1: Full day Rafring - &amp;gt;&amp;nbsp;&lt;a href="https://www.periyartigerreserve.org/Program/60b38d923eabc42b78474621?name=Bamboo%20Rafting%20-%20Full%20day" target="_blank"&gt;Link&lt;/a&gt;&lt;br&gt;Option-2: Half dayRafting -&amp;gt;&amp;nbsp;&lt;a href="https://www.periyartigerreserve.org/Program/60b390093eabc42b78474626?name=Bamboo%20Rafting%20-%20Half%20Day" target="_blank"&gt;Link&lt;/a&gt;&lt;br&gt;&lt;hr&gt;&lt;font color="#f50505"&gt;Day-7 (&lt;/font&gt;&lt;span&gt;August 9, 2025; Saturday)&lt;/span&gt;&lt;br&gt;&lt;a href="https://maps.app.goo.gl/vAksQaaz18zKasZh7" target="_blank"&gt;Cinnamon Gardens Spice Plantation Visit&amp;nbsp;&lt;/a&gt;or&amp;nbsp;&lt;a href="https://www.tripadvisor.in/AttractionProductReview-g2287343-d17349874-Munnar_Tea_Trail_Tour_with_Factory_Experience_By_Munnar_Info-Devikulam_Idukki_Dis.html" target="_blank"&gt;Munnar Tea Trail Tour&lt;/a&gt;&lt;br&gt;We spent the day relaxing, with some ayurvedic massages and swimming in the resort near the national park.&lt;br&gt;&lt;hr&gt;&lt;font color="#eb0505"&gt;Day-8(&lt;/font&gt;&lt;span&gt;August 10, 2025; Sunday&lt;/span&gt;&lt;font color="#eb0505"&gt;)&lt;/font&gt;&lt;br&gt;We travel to Aleppey and spend a day in a houseboat. - &amp;gt;&amp;nbsp;&lt;a href="https://www.booking.com/Share-YEkMMQ" target="_blank"&gt;Link&lt;/a&gt;&lt;br&gt;We start at 11:30 AM and stay overnight in the boat.&lt;br&gt;&lt;br&gt;&lt;hr&gt;&lt;font color="#f20707"&gt;Day-9(&lt;/font&gt;&lt;span&gt;August 11, 2025; Monday&lt;/span&gt;&lt;font color="#f20707"&gt;)&lt;/font&gt;&lt;br&gt;We will explore the Spice trading hub in Aleppey. We drive back to Ernakulam/Kochi from Aleppey and return the car.&lt;br&gt;In the afternoon , we will board the train to Bangalore, from Ernakular South.&lt;br&gt;&lt;font color="#7a8ff5"&gt;16:50 &lt;/font&gt;| &lt;font color="#f5f778"&gt;ERNAKULAM JN &lt;/font&gt;-&amp;gt;&amp;nbsp;&lt;font color="#778bee"&gt;03:55&lt;/font&gt; | &lt;font color="#fbfd77"&gt;SMVT BENGALURU&lt;/font&gt;&lt;br&gt;&lt;hr&gt;&lt;font color="#f20707"&gt;Day-10(&lt;/font&gt;&lt;span&gt;August 12, 2025; Tuesday&lt;/span&gt;&lt;font color="#f20707"&gt;)&lt;/font&gt;&lt;br&gt;We take an Uber from Bangalore to Hampi.&lt;br&gt;&lt;hr&gt;&lt;div&gt;&lt;font color="#f20707"&gt;Day-11(&lt;/font&gt;&lt;span&gt;August 13, 2025; Wednesday&lt;/span&gt;&lt;font color="#f20707"&gt;)&lt;br&gt;&lt;/font&gt;We spent the day among the Ruins of Hampi.&lt;br&gt;&lt;hr&gt;&lt;/div&gt;&lt;div&gt;&lt;font color="#f20707"&gt;Day-12(&lt;/font&gt;&lt;span&gt;August 14, 2025; Thursday&lt;/span&gt;&lt;font color="#f20707"&gt;)&lt;/font&gt;&lt;br&gt;We do paragliding over the ruins of Hampi.&lt;br&gt;&lt;hr&gt;&lt;/div&gt;&lt;div&gt;&lt;font color="#f20707"&gt;Day-13(&lt;/font&gt;&lt;span&gt;August 15, 2025; Friday&lt;/span&gt;&lt;font color="#f20707"&gt;)&lt;/font&gt;&lt;br&gt;We spent the day among the Ruins of Hampi.&lt;br&gt;&lt;hr&gt;&lt;/div&gt;&lt;div&gt;&lt;font color="#f20707"&gt;Day-14(&lt;/font&gt;&lt;span&gt;August 16, 2025; Saturday&lt;/span&gt;&lt;font color="#f20707"&gt;)&lt;/font&gt;&lt;br&gt;We travel to Bangalore by train, from Hosapete.&amp;nbsp;&lt;br&gt;We explore the city of Bangalore.&lt;br&gt;&lt;hr&gt;&lt;/div&gt;&lt;div&gt;&lt;font color="#f20707"&gt;Day-15(&lt;/font&gt;&lt;span&gt;August 17, 2025&lt;/span&gt;&lt;font color="#f20707"&gt;)&lt;/font&gt;&lt;br&gt;We fly back to &lt;font color="#e8f25f"&gt;Frankfurt&lt;/font&gt; from &lt;font color="#f1fb60"&gt;Bangalore(Bengaluru)&lt;/font&gt; with&amp;nbsp; &lt;font color="#e9f35e"&gt;Lufthansa&lt;/font&gt;.&lt;br&gt;&lt;div&gt;&lt;font color="#63fdeb"&gt;LH 755- Lufthansa&lt;/font&gt;&lt;br&gt;&lt;span&gt;02:55 AM&lt;/span&gt;&lt;font color="#8178f7"&gt;&amp;nbsp;(&lt;/font&gt;&lt;span&gt;&lt;font color="#8178f7"&gt;Indian Time)&lt;/font&gt;&lt;font color="#73ff61"&gt; Bangalore Internationaler Flughafen Kempegowda (BLR) Terminal 2&lt;/font&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp; -&amp;gt;&amp;nbsp;&lt;/span&gt;&lt;font color="#f4a4b0"&gt;&amp;nbsp;&lt;/font&gt;&lt;span&gt;&lt;font color="#f4a4b0"&gt;9h 40min Duration&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font color="#5d5bf1"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;font color="#5e5bfb"&gt;09:05 AM&lt;/font&gt;&amp;nbsp;&lt;span&gt;&lt;font color="#5d5bf1"&gt;(German Time)&lt;/font&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;span&gt;&lt;font color="#71f75f"&gt;Frankfurt Internationaler Flughafen Frankfurt (FRA) Terminal 1&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;font color="#5e5bfb"&gt;&amp;nbsp;&lt;/font&gt;&lt;br&gt;&lt;hr&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;font color="#f77769"&gt;Trip Memebers:&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font color="#f50a0a"&gt;Confimred:&lt;/font&gt;&lt;br&gt;1. Rohith&amp;nbsp;&lt;br&gt;2. Lyban&lt;br&gt;3. Anita&lt;br&gt;4. Oli&lt;br&gt;&lt;span&gt;5. Madhuri&lt;br&gt;6. Pierre-Louie&lt;br&gt;7. Nanveet&lt;br&gt;&lt;/span&gt;&lt;font color="#ff0000"&gt;Waiting list:&lt;br&gt;&lt;/font&gt;8. Sophie?&lt;br&gt;9. Rahul?&lt;br&gt;10. Patrick?&lt;font color="#ff0000"&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;'
+              class="main-image"
+            />
+          </div>
+          <div class="content-section">
+            <h1 class="trip-title title-padding">Late Summer Trip To India</h1>
+            <div class="info-item title-padding">
+              <h3>Location</h3>
+              <a
+                href="https://www.google.com/maps/d/viewer?mid=1iki5oSyJygsp4YlKHbLPIuhW0H2M6XQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="map-link"
+                >📍 View on Google Maps</a
+              >
+            </div>
+            <div class="info-item title-padding">
+              <h3>Dates</h3>
+              <p>03-08-2025 - 16-08-2025</p>
+            </div>
+            <div class="info-item title-padding">
+              <h3>Description</h3>
+              <div>
+                This is the trip, we were waiting for, in a short two weeks,
+                we&nbsp; will go through two south indian states of Kerala and
+                Karnataka, exploring its culture cusine and people.<br />
+                <div>
+                  <font color="#f50505"><br /></font>
+                </div>
+                <div>
+                  <font color="#f50505">Day-1 (</font
+                  ><span>August 3, 2025; Sunday</span
+                  ><font color="#f50505">)<br /></font><br />We fly
+                  from&nbsp;<font color="#f9e71f">Frankfurt</font>&nbsp;to
+                  <font color="#ecf75f">Cochin (Kochi)</font>, on Sunday with
+                  <font color="#eff962">Qatar Airways</font>.<br /><font
+                    color="#63fdeb"
+                    >QR68 - Qatar Airways</font
+                  ><br /><font color="#5e5bf5">17:15</font>
+                  <font color="#73ff61"
+                    >Frankfurt Frankfurt International Airport (FRA)</font
+                  >&nbsp; -&gt;&nbsp;<font color="#f4a4b0"
+                    >&nbsp;5h 55m Duration</font
+                  ><br /><font color="#5d5bf1"
+                    >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; 00:10+1</font
+                  >
+                  <font color="#71f75f"
+                    >Doha Hamad International Airport (DOH)<br /></font
+                  ><font color="#6ffbdf">QR514 - Qatar Airways</font><br /><font
+                    color="#6c59f7"
+                    >01:45</font
+                  ><font color="#6bed5a">
+                    Doha Hamad International Airport (DOH)</font
+                  >
+                  -&gt;<font color="#6663fd">&nbsp;&nbsp;</font
+                  ><span><font color="#f877c9">4h 30m Duration</font></span>
+                </div>
+                <div>
+                  <font color="#6663fd"
+                    >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; 08:45 </font
+                  ><font color="#6ff85d"
+                    >Kochi Kochi International Airport (COK)</font
+                  ><br />
+                </div>
+                <div>
+                  <hr />
+                  <font color="#f10404">Day-2 (</font
+                  ><span>August 4, 2025; Monday</span
+                  ><font color="#f10404">)<br /></font>We arrive in&nbsp;<font
+                    color="#ffed24"
+                    >Cochin International Airport on&nbsp;</font
+                  >, at 8:45 AM.&nbsp;
+                  <div>
+                    We stay the night in Kochi, perhaps also expolre the
+                    Mattanchery old town.
+                  </div>
+                  <br />
+                  <hr />
+                  <font color="#f20202">Day-3(</font
+                  ><span>August 5, 2025; Tuesday</span
+                  ><font color="#f20202">)</font><br />We visit Kerala Folklore
+                  Museum and Kerala Kalamandalam<br />
+                  <hr />
+                  <font color="#f90606">Day-4(</font
+                  ><span>August 6, 2025; Wednesday</span
+                  ><font color="#f90606">)<br /></font>We travel to the nilgiri
+                  hills, on the eastern side of Kerala, by car.<br />We will
+                  chill this day in the resort, where we stay.<br />For the
+                  forthcoming days , we will eyplore, the Periyar Tiger
+                  Reserve.<br />Periyar Tiger Reserve&nbsp;-&gt;&nbsp;<a
+                    href="https://www.keralatourism.org/images/eco-tourism/e-brochures/periyar.pdf"
+                    target="_blank"
+                    >Information PDF</a
+                  ><br />
+                  <hr />
+                  <font color="#f50505">Day-5 (</font
+                  ><span>August 7, 2025; Thursday</span
+                  ><font color="#f50505">)</font><br /><font color="#58f943"
+                    >Border Hiking </font
+                  ><br />This is a day-long hiking programme within the Periyar
+                  Tiger Reserve. The undulating terrains and altitudinal hiking
+                  of 900 m to 1300 m will give you the glimpse of the lofty
+                  slopes bordering the region. <br />Gaur, sloth bear and
+                  elephants are often sighted apart from birds and butterflies
+                  from here. <br />This programme is open to a maximum of 10
+                  tourists in 2 different groups. The trekkers along with two
+                  guides participate in the programme which starts at 08.00 hrs
+                  and ends in the evening. <br />The package includes food
+                  also.<br />Option 1:
+                  <font color="#fcff47">Throndiyar&nbsp; -&gt;&nbsp;&nbsp;</font
+                  ><a
+                    href="https://www.periyartigerreserve.org/Program/60b39c92a5380c329b3674e4?name=Border%20Hiking%20-%20Thondiyar"
+                    target="_blank"
+                    >Link</a
+                  ><br />Option 2:
+                  <font color="#fcff4d">Brandipara&nbsp; - &gt;&nbsp;</font
+                  ><a
+                    href="https://www.periyartigerreserve.org/Program/60b39d8ea5380c329b3674e9?name=Border%20Hiking%20-%20Brandipara"
+                    target="_blank"
+                    >Link</a
+                  ><br /><br />
+                  <hr />
+                  <font color="#f70202">Day-6 (</font
+                  ><span>August 8, 2025; Friday</span
+                  ><font color="#f70202">)</font><br /><span
+                    >Border Hiking / Bamboo Rafting<br /></span
+                  >Option -1: Full day Rafring - &gt;&nbsp;<a
+                    href="https://www.periyartigerreserve.org/Program/60b38d923eabc42b78474621?name=Bamboo%20Rafting%20-%20Full%20day"
+                    target="_blank"
+                    >Link</a
+                  ><br />Option-2: Half dayRafting -&gt;&nbsp;<a
+                    href="https://www.periyartigerreserve.org/Program/60b390093eabc42b78474626?name=Bamboo%20Rafting%20-%20Half%20Day"
+                    target="_blank"
+                    >Link</a
+                  ><br />
+                  <hr />
+                  <font color="#f50505">Day-7 (</font
+                  ><span>August 9, 2025; Saturday)</span><br /><a
+                    href="https://maps.app.goo.gl/vAksQaaz18zKasZh7"
+                    target="_blank"
+                    >Cinnamon Gardens Spice Plantation Visit&nbsp;</a
+                  >or&nbsp;<a
+                    href="https://www.tripadvisor.in/AttractionProductReview-g2287343-d17349874-Munnar_Tea_Trail_Tour_with_Factory_Experience_By_Munnar_Info-Devikulam_Idukki_Dis.html"
+                    target="_blank"
+                    >Munnar Tea Trail Tour</a
+                  ><br />We spent the day relaxing, with some ayurvedic massages
+                  and swimming in the resort near the national park.<br />
+                  <hr />
+                  <font color="#eb0505">Day-8(</font
+                  ><span>August 10, 2025; Sunday</span
+                  ><font color="#eb0505">)</font><br />We travel to Aleppey and
+                  spend a day in a houseboat. - &gt;&nbsp;<a
+                    href="https://www.booking.com/Share-YEkMMQ"
+                    target="_blank"
+                    >Link</a
+                  ><br />We start at 11:30 AM and stay overnight in the boat.<br /><br />
+                  <hr />
+                  <font color="#f20707">Day-9(</font
+                  ><span>August 11, 2025; Monday</span
+                  ><font color="#f20707">)</font><br />We will explore the Spice
+                  trading hub in Aleppey. We drive back to Ernakulam/Kochi from
+                  Aleppey and return the car.<br />In the afternoon , we will
+                  board the train to Bangalore, from Ernakular South.<br /><font
+                    color="#7a8ff5"
+                    >16:50 </font
+                  >| <font color="#f5f778">ERNAKULAM JN </font>-&gt;&nbsp;<font
+                    color="#778bee"
+                    >03:55</font
+                  >
+                  | <font color="#fbfd77">SMVT BENGALURU</font><br />
+                  <hr />
+                  <font color="#f20707">Day-10(</font
+                  ><span>August 12, 2025; Tuesday</span
+                  ><font color="#f20707">)</font><br />We take an Uber from
+                  Bangalore to Hampi.<br />
+                  <hr />
+                  <div>
+                    <font color="#f20707">Day-11(</font
+                    ><span>August 13, 2025; Wednesday</span
+                    ><font color="#f20707">)<br /></font>We spent the day among
+                    the Ruins of Hampi.<br />
+                    <hr />
+                  </div>
+                  <div>
+                    <font color="#f20707">Day-12(</font
+                    ><span>August 14, 2025; Thursday</span
+                    ><font color="#f20707">)</font><br />We do paragliding over
+                    the ruins of Hampi.<br />
+                    <hr />
+                  </div>
+                  <div>
+                    <font color="#f20707">Day-13(</font
+                    ><span>August 15, 2025; Friday</span
+                    ><font color="#f20707">)</font><br />We spent the day among
+                    the Ruins of Hampi.<br />
+                    <hr />
+                  </div>
+                  <div>
+                    <font color="#f20707">Day-14(</font
+                    ><span>August 16, 2025; Saturday</span
+                    ><font color="#f20707">)</font><br />We travel to Bangalore
+                    by train, from Hosapete.&nbsp;<br />We explore the city of
+                    Bangalore.<br />
+                    <hr />
+                  </div>
+                  <div>
+                    <font color="#f20707">Day-15(</font
+                    ><span>August 17, 2025</span><font color="#f20707">)</font
+                    ><br />We fly back to
+                    <font color="#e8f25f">Frankfurt</font> from
+                    <font color="#f1fb60">Bangalore(Bengaluru)</font> with&nbsp;
+                    <font color="#e9f35e">Lufthansa</font>.<br />
+                    <div>
+                      <font color="#63fdeb">LH 755- Lufthansa</font><br /><span
+                        >02:55 AM</span
+                      ><font color="#8178f7">&nbsp;(</font
+                      ><span
+                        ><font color="#8178f7">Indian Time)</font
+                        ><font color="#73ff61">
+                          Bangalore Internationaler Flughafen Kempegowda (BLR)
+                          Terminal 2</font
+                        ></span
+                      ><span>&nbsp; -&gt;&nbsp;</span
+                      ><font color="#f4a4b0">&nbsp;</font
+                      ><span
+                        ><font color="#f4a4b0">9h 40min Duration</font></span
+                      >
+                    </div>
+                    <div>
+                      <font color="#5d5bf1"
+                        >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp;&nbsp;</font
+                      ><font color="#5e5bfb">09:05 AM</font>&nbsp;<span
+                        ><font color="#5d5bf1">(German Time)</font></span
+                      ><span>&nbsp;</span
+                      ><span
+                        ><font color="#71f75f"
+                          >Frankfurt Internationaler Flughafen Frankfurt (FRA)
+                          Terminal 1</font
+                        ></span
+                      >
+                    </div>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<font color="#5e5bfb"
+                      >&nbsp;</font
+                    ><br />
+                    <hr />
+                  </div>
+                  <div>
+                    <span
+                      ><font color="#f77769">Trip Memebers:<br /></font
+                    ></span>
+                  </div>
+                  <div>
+                    <font color="#f50a0a">Confimred:</font><br />1.
+                    Rohith&nbsp;<br />2. Lyban<br />3. Anita<br />4. Oli<br /><span
+                      >5. Madhuri<br />6. Pierre-Louie<br />7. Nanveet<br /></span
+                    ><font color="#ff0000">Waiting list:<br /></font>8.
+                    Sophie?<br />9. Rahul?<font
+                      color="#ff0000"
+                    ></font>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="info-item title-padding">
+              <h3>Accommodation</h3>
+              <div>
+                <font color="#02f23e">We stay in the following places:</font
+                ><br />1. Kochi (Resort/Hotel)<br />2. Periyar&nbsp; National
+                Park (Resort/Ayurvedic Retreat)<br />3. Udayamperoor(Rohith's
+                and Rahul's House)<br />4. Mysuru/Mysore (Resort/Hotel) ?<br />5.
+                Hampi(Resort/Hotel)<br />6. Bengaluru/Bangalore(Hotel)
+              </div>
+            </div>
+            <div class="info-item title-padding">
+              <h3>Transportation</h3>
+              <div>
+                <div>
+                  <font color="#f50505">Day-1 (</font>August 3, 2025;
+                  Sunday<font color="#f50505">)</font><br />We fly
+                  from&nbsp;<font color="#f9e71f">Frankfurt</font
+                  >&nbsp;to&nbsp;<font color="#ecf75f">Cochin (Kochi)</font>, on
+                  Sunday with&nbsp;<font color="#eff962">Qatar Airways</font
+                  >.<br /><font color="#63fdeb">QR68 - Qatar Airways</font
+                  ><br /><font color="#5e5bf5">17:15</font>&nbsp;<font
+                    color="#73ff61"
+                    >Frankfurt Frankfurt International Airport (FRA)</font
+                  >&nbsp; -&gt;&nbsp;<font color="#f4a4b0"
+                    >&nbsp;5h 55m Duration</font
+                  ><br /><font color="#5d5bf1"
+                    >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; 00:10+1</font
+                  >&nbsp;<font color="#71f75f"
+                    >Doha Hamad International Airport (DOH)<br /></font
+                  ><font color="#6ffbdf">QR514 - Qatar Airways</font><br /><font
+                    color="#6c59f7"
+                    >01:45</font
+                  ><font color="#6bed5a"
+                    >&nbsp;Doha Hamad International Airport (DOH)</font
+                  >&nbsp;-&gt;<font color="#6663fd">&nbsp;&nbsp;</font
+                  ><span><font color="#f877c9">4h 30m Duration</font></span>
+                </div>
+                <div>
+                  <font color="#6663fd"
+                    >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; 08:45&nbsp;</font
+                  ><font color="#6ff85d"
+                    >Kochi Kochi International Airport (COK)<br
+                  /></font>
+                  <hr />
+                </div>
+                For our transportation, we will rent a car for the days, we are
+                in Kerala.<br />
+                <div><br /></div>
+                <div>
+                  <div>
+                    <font color="#f20707">Day-9(</font>August 11, 2025;
+                    Monday<font color="#f20707">)</font><br /><br /><font
+                      color="#7a8ff5"
+                      >16:50&nbsp;</font
+                    >|&nbsp;<font color="#f5f778">ERNAKULAM JN&nbsp;</font
+                    >-&gt;&nbsp;<font color="#778bee">03:55</font
+                    >&nbsp;|&nbsp;<font color="#fbfd77"
+                      >SMVT BENGALURU<br
+                    /></font>
+                    <hr />
+                    <font color="#f20707">Day-15(</font>August 17, 2025<font
+                      color="#f20707"
+                      >)</font
+                    ><br />We fly back to&nbsp;<font color="#e8f25f"
+                      >Frankfurt</font
+                    >&nbsp;from&nbsp;<font color="#f1fb60"
+                      >Bangalore(Bengaluru)</font
+                    >&nbsp;with&nbsp;&nbsp;<font color="#e9f35e">Lufthansa</font
+                    >.<br />
+                    <div>
+                      <font color="#63fdeb">LH 755- Lufthansa</font><br /><span
+                        >02:55 AM</span
+                      ><font color="#8178f7">&nbsp;(</font
+                      ><span
+                        ><font color="#8178f7">Indian Time)</font
+                        ><font color="#73ff61"
+                          >&nbsp;Bangalore Internationaler Flughafen Kempegowda
+                          (BLR) Terminal 2</font
+                        ></span
+                      ><span>&nbsp; -&gt;&nbsp;</span
+                      ><font color="#f4a4b0">&nbsp;</font
+                      ><span
+                        ><font color="#f4a4b0">9h 40min Duration</font></span
+                      >
+                    </div>
+                    <div>
+                      <font color="#5d5bf1"
+                        >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp;&nbsp;</font
+                      ><font color="#5e5bfb">09:05 AM</font>&nbsp;<span
+                        ><font color="#5d5bf1">(German Time)</font></span
+                      ><span>&nbsp;</span
+                      ><span
+                        ><font color="#71f75f"
+                          >Frankfurt Internationaler Flughafen Frankfurt (FRA)
+                          Terminal 1</font
+                        ></span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="info-item title-padding">
+              <h3>Equipment</h3>
+              <div></div>
+            </div>
+            <div class="info-item title-padding">
+              <h3>Costs</h3>
+              <div>
+                Yet to be detrmined.<br />The flights, to and back will cost
+                around <font color="#1d90fc">800-950€</font>
+              </div>
+            </div>
+            <div class="sub-images-container title-padding">
+              <div class="sub-images-wrapper">
+                <div
+                  class="sub-image-item"
+                  data-index="0"
+                  style="display: block"
+                >
+                  <div class="sub-image-card">
+                    <img
+                      src="https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Trip-1/subImages/image2.webp"
+                      alt="Periyar National Park"
+                    />
+                    <h4>Periyar National Park</h4>
+                    <p></p>
+                  </div>
+                </div>
+                <div
+                  class="sub-image-item"
+                  data-index="1"
+                  style="display: none"
+                >
+                  <div class="sub-image-card">
+                    <img
+                      src="https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Trip-1/subImages/image3.webp"
+                      alt="Aleppey House Boating"
+                    />
+                    <h4>Aleppey House Boating</h4>
+                    <p></p>
+                  </div>
+                </div>
+                <div
+                  class="sub-image-item"
+                  data-index="2"
+                  style="display: none"
+                >
+                  <div class="sub-image-card">
+                    <img
+                      src="https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Trip-1/subImages/image4.webp"
+                      alt="Mysore"
+                    />
+                    <h4>Mysore</h4>
+                    <p></p>
+                  </div>
+                </div>
+                <div
+                  class="sub-image-item"
+                  data-index="3"
+                  style="display: none"
+                >
+                  <div class="sub-image-card">
+                    <img
+                      src="https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Trip-1/subImages/image5.webp"
+                      alt="Hampi"
+                    />
+                    <h4>Hampi</h4>
+                    <p></p>
+                  </div>
+                </div>
+                <div
+                  class="sub-image-item"
+                  data-index="4"
+                  style="display: none"
+                >
+                  <div class="sub-image-card">
+                    <img
+                      src="https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Trip-1/subImages/image6.webp"
+                      alt="Bangalore"
+                    />
+                    <h4>Bangalore</h4>
+                    <p></p>
+                  </div>
+                </div>
+                <div
+                  class="sub-image-item"
+                  data-index="5"
+                  style="display: none"
+                >
+                  <div class="sub-image-card">
+                    <img
+                      src="https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Trip-1/subImages/image7.webp"
+                      alt="Mattanchery"
+                    />
+                    <h4>Mattanchery</h4>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+              <div class="pagination-dots">
+                <button
+                  class="pagination-dot image-dot active"
+                  data-index="0"
+                ></button
+                ><button
+                  class="pagination-dot image-dot"
+                  data-index="1"
+                ></button
+                ><button
+                  class="pagination-dot image-dot"
+                  data-index="2"
+                ></button
+                ><button
+                  class="pagination-dot image-dot"
+                  data-index="3"
+                ></button
+                ><button
+                  class="pagination-dot image-dot"
+                  data-index="4"
+                ></button
+                ><button
+                  class="pagination-dot image-dot"
+                  data-index="5"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

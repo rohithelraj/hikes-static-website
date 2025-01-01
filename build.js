@@ -21,8 +21,10 @@ function generateReportsPage(reports, currentPage, totalPages) {
   );
 
   return `<!DOCTYPE html>
-    <html>
+    <html lang="en">
       <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Reports - Page ${currentPage}</title>
         <link rel="stylesheet" href="../../styles.css">
       </head>
@@ -42,8 +44,10 @@ function generateTripsPage(trips, currentPage, totalPages) {
   );
 
   return `<!DOCTYPE html>
-    <html>
+    <html lang="en">
       <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Trips - Page ${currentPage}</title>
         <link rel="stylesheet" href="../../styles.css">
       </head>
@@ -170,8 +174,10 @@ async function buildSite() {
     fs.writeFileSync(
       path.join(reportsDir, `${report.content.ReportName.replace(/[^a-zA-Z0-9]/g, '-')}-${report.content.UniqueReportID}.html`),
       `<!DOCTYPE html>
-      <html>
+       <html lang="en">
         <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>${report.content.ReportName}</title>
           <link rel="stylesheet" href="../../styles.css">
         </head>
@@ -187,8 +193,10 @@ async function buildSite() {
     fs.writeFileSync(
       path.join(tripsDir, `${trip.content.TripName.replace(/[^a-zA-Z0-9]/g, '-')}-${trip.content.UniqueTripID}.html`),
       `<!DOCTYPE html>
-      <html>
+       <html lang="en">
         <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>${trip.content.TripName}</title>
           <link rel="stylesheet" href="../../styles.css">
         </head>
@@ -204,8 +212,10 @@ async function buildSite() {
     fs.writeFileSync(
       path.join(eventsDir, `${event.content.EventName.replace(/[^a-zA-Z0-9]/g, '-')}-${event.content.UniqueEventID}.html`),
       `<!DOCTYPE html>
-      <html>
+       <html lang="en">
         <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>${event.content.EventName}</title>
           <link rel="stylesheet" href="../../styles.css">
         </head>
@@ -219,8 +229,10 @@ async function buildSite() {
   // Generate index.html
   const indexHtml = `
     <!DOCTYPE html>
-    <html>
+      <html lang="en">
       <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Adventure Journal</title>
         <link rel="stylesheet" href="./styles.css">
       </head>
@@ -228,10 +240,10 @@ async function buildSite() {
         <div class="page-layout">
           <div class="toolbar">
             <nav>
-              <a href="/" class="nav-item">Home</a>
-              <a href="/trip/tripLists/tripsList.html" class="nav-item">Trips</a>
-              <a href="/event/eventLists/eventList.html" class="nav-item">Events</a>
-              <a href="/report/reportLists/reportsList.html" class="nav-item">Reports</a>
+              <a href="index.html" class="nav-item">Home</a>
+              <a href="./trip/tripLists/tripsList.html" class="nav-item">Trips</a>
+              <a href="./event/eventLists/eventList.html" class="nav-item">Events</a>
+              <a href="./report/reportLists/reportsList.html" class="nav-item">Reports</a>
             </nav>
           </div>
           <div class="landing-content">

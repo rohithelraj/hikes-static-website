@@ -28,10 +28,10 @@ const TripListPage = ({ trips, currentPage, totalPages }) => {
   return React.createElement('div', { className: 'page-layout' },
     React.createElement('div', { className: 'toolbar' },
       React.createElement('nav', null,
-        React.createElement('a', { href: '/', className: 'nav-item' }, 'Home'),
-        React.createElement('a', { href: '/trips', className: 'nav-item' }, 'Trips'),
-        React.createElement('a', { href: '/events', className: 'nav-item' }, 'Events'),
-        React.createElement('a', { href: '/reports', className: 'nav-item' }, 'Reports')
+        React.createElement('a', { href: '../../index.html', className: 'nav-item' }, 'Home'),
+        React.createElement('a', { href: '../tripLists/tripsList.html', className: 'nav-item' }, 'Trips'),
+        React.createElement('a', { href: '../../events/eventLists/eventList.html', className: 'nav-item' }, 'Events'),
+        React.createElement('a', { href: '../../report/reportLists/reportsList.html', className: 'nav-item' }, 'Reports')
       )
     ),
     React.createElement('div', { className: 'trips-content' },
