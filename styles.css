@@ -76,7 +76,7 @@ body {
 
 /* Responsive grids */
 .reports-grid,
-.trips-grid {
+.trips-grid,.hikes-grid {
   margin-left: 60px;
   padding: 20px;
   display: grid;
@@ -86,7 +86,7 @@ body {
 
 
 /* Cards */
-.report-card {
+.report-card,.hike-card {
   background: white;
   border-radius: 8px;
   overflow: hidden;

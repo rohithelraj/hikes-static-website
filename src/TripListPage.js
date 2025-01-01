@@ -30,7 +30,7 @@ const TripListPage = ({ trips, currentPage, totalPages }) => {
       React.createElement('nav', null,
         React.createElement('a', { href: '../../index.html', className: 'nav-item' }, 'Home'),
         React.createElement('a', { href: '../tripLists/tripsList.html', className: 'nav-item' }, 'Trips'),
-        React.createElement('a', { href: '../../events/eventLists/eventList.html', className: 'nav-item' }, 'Events'),
+        React.createElement('a', { href: '../../hikes/hikeLists/hikeList.html', className: 'nav-item' }, 'Hikes'),
         React.createElement('a', { href: '../../report/reportLists/reportsList.html', className: 'nav-item' }, 'Reports')
       )
     ),

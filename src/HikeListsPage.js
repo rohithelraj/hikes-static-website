@@ -24,9 +24,9 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   );
 };
 
-const ReportsListPage = ({ reports, currentPage, totalPages }) => {
+const HikeListsPage = ({ hikes, currentPage, totalPages }) => {
   const ITEMS_PER_PAGE = 6;
-  const sortedReports = reports.sort((a, b) => new Date(b.ReportDate) - new Date(a.ReportDate));
+  const sortedHikes = hikes.sort((a, b) => new Date(b.EventDate) - new Date(a.EventDate));
 
   return React.createElement('div', { className: 'page-layout' },
     React.createElement('div', { className: 'toolbar' },
@@ -37,23 +37,23 @@ const ReportsListPage = ({ reports, currentPage, totalPages }) => {
         React.createElement('a', { href: '../../report/reportLists/reportsList.html', className: 'nav-item' }, 'Reports')
       )
     ),
-    React.createElement('div', { className: 'reports-content' },
-      React.createElement('div', { className: 'reports-grid' },
-        sortedReports
+    React.createElement('div', { className: 'hikes-content' },
+      React.createElement('div', { className: 'hikes-grid' },
+        sortedHikes
           .slice(0, ITEMS_PER_PAGE)
-          .map(report => 
-            React.createElement('article', { className: 'report-card', key: report.UniqueReportID },
+          .map(hike => 
+            React.createElement('article', { className: 'hike-card', key: hike.UniqueEventID },
               React.createElement('div', { className: 'card-image' },
-                React.createElement('img', { src: report.MainImagePath, alt: report.ReportName })
+                React.createElement('img', { src: hike.MainImagePath, alt: hike.EventName })
               ),
               React.createElement('div', { className: 'card-content' },
-                React.createElement('h2', null, report.ReportName),
-                React.createElement('p', { className: 'date' }, report.ReportDate),
+                React.createElement('h2', null, hike.EventName),
+                React.createElement('p', { className: 'date' }, hike.EventDate),
                 React.createElement('p', { className: 'description' }, 
-                  report.Description ? `${report.Description.substring(0, 150)}...` : ''
+                  hike.Description ? `${hike.Description.substring(0, 150)}...` : ''
                 ),
                 React.createElement('a', { 
-                  href: `../reports/${report.ReportName.replace(/[^a-zA-Z0-9]/g, '-')}-${report.UniqueReportID}.html`,
+                  href: `../hikes/${hike.EventName.replace(/[^a-zA-Z0-9]/g, '-')}-${hike.UniqueEventID}.html`,
                   className: 'continue-reading'
                 }, 'Continue Reading')
               )
@@ -69,4 +69,4 @@ const ReportsListPage = ({ reports, currentPage, totalPages }) => {
   );
 };
 
-exports.ReportsListPage = ReportsListPage;
+exports.HikeListsPage = HikeListsPage;

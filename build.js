@@ -9,7 +9,8 @@ const { ReportPage } = require('./src/ReportPage');
 const { ReportsListPage } = require('./src/ReportsListPage');
 const { TripPage } = require('./src/TripPage');
 const { TripListPage } = require('./src/TripListPage');
-const { EventPage } = require('./src/EventPage');
+const { HikePage } = require('./src/HikePage');
+const { HikeListsPage } = require('./src/HikeListsPage');
 
 function generateReportsPage(reports, currentPage, totalPages) {
   const listingHtml = renderToString(
@@ -57,10 +58,33 @@ function generateTripsPage(trips, currentPage, totalPages) {
     </html>`;
 }
 
+function generateHikesPage(hikes, currentPage, totalPages) {
+  const listingHtml = renderToString(
+    React.createElement(HikeListsPage, { 
+      hikes,
+      currentPage,
+      totalPages
+    })
+  );
+
+  return `<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trips - Page ${currentPage}</title>
+        <link rel="stylesheet" href="../../styles.css">
+      </head>
+      <body>
+        <div id="app">${listingHtml}</div>
+      </body>
+    </html>`;
+}
+
 async function buildSite() {
   const contentDir = path.join(__dirname, 'content', 'reports');
   const tripsContentDir = path.join(__dirname, 'content', 'trips');
-  const eventsContentDir = path.join(__dirname, 'content', 'events');
+  const hikesContentDir = path.join(__dirname, 'content', 'hikes');
   
   // Create directory structure
   const distDir = path.join(__dirname, 'dist');
@@ -68,9 +92,10 @@ async function buildSite() {
   const reportsDir = path.join(distDir, 'report', 'reports');
   const tripsDir = path.join(distDir, 'trip', 'trips');
   const tripListsDir = path.join(distDir, 'trip', 'tripLists');
-  const eventsDir = path.join(distDir, 'event', 'events');
+  const hikesDir = path.join(distDir, 'hike', 'hikes');
+  const hikeListsDir = path.join(distDir, 'hike', 'hikeLists');
   
-  [distDir, reportListsDir, reportsDir, tripsDir, tripListsDir, eventsDir].forEach(dir => {
+  [distDir, reportListsDir, reportsDir, tripsDir, tripListsDir, hikesDir, hikeListsDir].forEach(dir => {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
     }
@@ -93,10 +118,10 @@ async function buildSite() {
       return { path: file.replace('.json', ''), content };
     });
 
-  const events = fs.readdirSync(eventsContentDir)
+  const hikes = fs.readdirSync(hikesContentDir)
     .filter(file => file.endsWith('.json'))
     .map(file => {
-      const filePath = path.join(eventsContentDir, file);
+      const filePath = path.join(hikesContentDir, file);
       const content = JSON.parse(fs.readFileSync(filePath));
       return { path: file.replace('.json', ''), content };
     });
@@ -136,6 +161,23 @@ async function buildSite() {
     );
   }
 
+  // Trip list pages
+  const hikeTotalPages = Math.ceil(hikes.length / ITEMS_PER_PAGE);
+  for (let page = 1; page <= hikeTotalPages; page++) {
+    const startIdx = (page - 1) * ITEMS_PER_PAGE;
+    const endIdx = startIdx + ITEMS_PER_PAGE;
+    const pageHikes = hikes
+      .sort((a, b) => new Date(b.content.EventDate) - new Date(a.content.EventDate))
+      .slice(startIdx, endIdx)
+      .map(t => t.content);
+
+    fs.writeFileSync(
+      path.join(hikeListsDir, page === 1 ? 'hikesList.html' : `hikesList${page}.html`),
+      generateHikesPage(pageHikes, page, hikeTotalPages)
+    );
+  }
+
+
   // Find upcoming item for index page
   const currentDate = new Date();
   const formatDate = (dateStr) => new Date(dateStr.split('-').reverse().join('-'));
@@ -146,15 +188,15 @@ async function buildSite() {
       displayDate: t.content.TripStartDate,
       date: formatDate(t.content.TripStartDate),
       title: t.content.TripName,
-      url: `/trip/trips/${t.content.TripName.replace(/[^a-zA-Z0-9]/g, '-')}-${t.content.UniqueTripID}.html`,
+      url: `./trip/trips/${t.content.TripName.replace(/[^a-zA-Z0-9]/g, '-')}-${t.content.UniqueTripID}.html`,
       mainImage: t.content.MainImagePath
     })),
-    ...events.map(e => ({
-      type: 'event',
+    ...hikes.map(e => ({
+      type: 'hike',
       displayDate: e.content.EventDate,
       date: formatDate(e.content.EventDate),
       title: e.content.EventName,
-      url: `/event/events/${e.content.EventName.replace(/[^a-zA-Z0-9]/g, '-')}-${e.content.UniqueEventID}.html`,
+      url: `./hike/hikes/${e.content.EventName.replace(/[^a-zA-Z0-9]/g, '-')}-${e.content.UniqueEventID}.html`,
       mainImage: e.content.MainImagePath
     }))
   ]
@@ -163,7 +205,7 @@ async function buildSite() {
 
   const featuredItem = futureItems[0] || {
     title: "Welcome to Adventure Journal",
-    displayDate: "Explore our trips and events",
+    displayDate: "Explore our trips and hikes",
     url: "/trip/tripLists/tripsList.html",
     mainImage: trips[0]?.content.MainImagePath || ""
   };
@@ -207,16 +249,16 @@ async function buildSite() {
     );
   }
 
-  for (const event of events) {
-    const html = renderToString(React.createElement(EventPage, { content: event.content }));
+  for (const hike of hikes) {
+    const html = renderToString(React.createElement(HikePage, { content: hike.content }));
     fs.writeFileSync(
-      path.join(eventsDir, `${event.content.EventName.replace(/[^a-zA-Z0-9]/g, '-')}-${event.content.UniqueEventID}.html`),
+      path.join(hikesDir, `${hike.content.EventName.replace(/[^a-zA-Z0-9]/g, '-')}-${hike.content.UniqueEventID}.html`),
       `<!DOCTYPE html>
        <html lang="en">
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>${event.content.EventName}</title>
+          <title>${hike.content.EventName}</title>
           <link rel="stylesheet" href="../../styles.css">
         </head>
         <body>
@@ -242,7 +284,7 @@ async function buildSite() {
             <nav>
               <a href="index.html" class="nav-item">Home</a>
               <a href="./trip/tripLists/tripsList.html" class="nav-item">Trips</a>
-              <a href="./event/eventLists/eventList.html" class="nav-item">Events</a>
+              <a href="./hike/hikeLists/hikesList.html" class="nav-item">Hikes</a>
               <a href="./report/reportLists/reportsList.html" class="nav-item">Reports</a>
             </nav>
           </div>

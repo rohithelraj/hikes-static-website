@@ -4,7 +4,7 @@ const Toolbar = () => React.createElement('div', { className: 'toolbar' },
   React.createElement('nav', null,
         React.createElement('a', { href: '../../index.html', className: 'nav-item' }, 'Home'),
         React.createElement('a', { href: '../../trip/tripLists/tripsList.html', className: 'nav-item' }, 'Trips'),
-        React.createElement('a', { href: '../../event/eventLists/eventsList.html', className: 'nav-item' }, 'Events'),
+        React.createElement('a', { href: '../../hike/hikeLists/hikesList.html', className: 'nav-item' }, 'Hikes'),
         React.createElement('a', { href: '../../report/reportLists/reportsList.html', className: 'nav-item' }, 'Reports')
   )
 );
