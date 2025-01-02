@@ -51,15 +51,17 @@ const HikePage = ({ content }) => {
           React.createElement('h3', null, 'Date'),
           React.createElement('p', null, content.EventDate)
         ),
-        content.UniqueKomootURL && React.createElement('div', { className: 'info-item title-padding' },
-          React.createElement('h3', null, 'Hiking Path'),
-          React.createElement('a', {
-            href: content.UniqueKomootURL,
-            target: '_blank',
-            rel: 'noopener noreferrer',
-            className: 'map-link '
-          }, '📍 View on Komoot')
-        ),
+        content.UniqueKomootURL && React.createElement('div', { className: 'title-padding' },
+                  React.createElement('h3', null, 'Komoot'),
+                  React.createElement('iframe', {
+                    src: `https://www.komoot.com/de-de/tour/${content.UniqueKomootURL}/embed?share_token=a2KxWmuUWvpGMaMPGOdOxc7OPz02vwsuxgZr0F15DJKKw3QJrc&profile=1&gallery=1`,
+                    width: '100%',
+                    height: '700',
+                    frameBorder: '0',
+                    scrolling: 'no',
+                    className: 'komoot-frame'
+                  })
+                ),
         React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Description'),
           React.createElement('div', { 

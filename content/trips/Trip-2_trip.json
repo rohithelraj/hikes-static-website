@@ -2,15 +2,25 @@
   "Accommodation": "We have an accomodation booked for the days from 16. April to 23. April in Tortoli.\u003cbr\u003e\n\u003ca href=\"https://www.booking.com/Share-6NTgpn\"\u003eVilla Sangemi\u003c/a\u003e\u003cbr\u003e\nThe accomodation is currently booked for 10 people.",
   "Costs": "\u003cdiv class=\"costs-breakdown\"\u003e\n  \u003cul\u003e\n    \u003cli\u003e184,1€ per person from 16. to 23. April 2025, apartment in Tortoli\u003c/li\u003e\n    \u003cli\u003e180,00€ for the flight, to and from Sardinia\u003c/li\u003e\n    \u003cli\u003e96,2€ per person for the car\u003c/li\u003e\n    \u003cli\u003e50,00€ per person for benzin\u003c/li\u003e\n    \u003cli\u003e200,00€ per person for food\u003c/li\u003e\n  \u003c/ul\u003e\n  \u003chr\u003e\n  \u003cp\u003eTotal Cost → \u003cspan style=\"color: #fb1818\"\u003e710,3€\u003c/span\u003e\u003c/p\u003e\n\u003c/div\u003e",
   "CreationDate": "2024-12-27",
-  "Description": "To remnisce our trip to crete last year, we will spent our easter in the second biggest island in the mediterranean.\u003cbr\u003eSardinia.\u003cbr\u003eConcrete plans will follow shortly.\u003cbr\u003e\u003cbr\u003e\u003cfont color=\"#0df88a\"\u003e\u003cb\u003eMembers:\u003cbr\u003e\u003c/b\u003e\u003c/font\u003e\u003ci\u003e\u003cfont color=\"#fd4e4e\"\u003eConfirmed:\u003c/font\u003e\u003c/i\u003e\u003cbr\u003e1. Sam\u003cbr\u003e2. Amalia\u003cbr\u003e3. Rohith\u0026nbsp;\u003cbr\u003e4. Lyban\u003cbr\u003e5. Pranay\u003cdiv\u003e6. Soumil\u0026nbsp;\u003c/div\u003e\u003cdiv\u003e7. Sophie\u003cbr\u003e\u003cdiv\u003e\u003ci\u003e\u003cfont color=\"#fd4e4e\"\u003eUnconfirmed:\u003c/font\u003e\u003c/i\u003e\u003cbr\u003e8. Aitor ?\u003cbr\u003e9. Alfredo ?\u003cbr\u003e10. Lea ?\u003cbr\u003e\u003cbr\u003e\u003cdiv\u003e\u003cbr\u003e\u003cbr\u003e\u003cbr\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e",
+  "Description": "\u003cp\u003eTo reminisce our trip to Crete last year, we will spend our Easter in the second biggest island in the Mediterranean.\u003cbr /\u003eSardinia.\u003cbr /\u003eConcrete plans will follow shortly.\u003cbr /\u003e\nIn the meantime, please checkout, how the planning is progressing in wanderlog..\n\u003cbr/\u003e\u003ca href=\"https://wanderlog.com/view/zoqkzuimeh/trip-to-sardinia\"\u003eWanderlog Link\u003c/a\u003e\u003cbr /\u003e\u003cspan style=\"color: #0df88a;\"\u003e\u003cstrong\u003eMembers:\u003cbr /\u003e\u003c/strong\u003e\u003c/span\u003e \u003cem\u003e\u003cspan style=\"color: #fd4e4e;\"\u003eConfirmed:\u003c/span\u003e\u003c/em\u003e\u003cbr /\u003e1. Sam\u003cbr /\u003e2. Amalia\u003cbr /\u003e3. Rohith\u003cbr /\u003e4. Lyban\u003cbr /\u003e5. Pranay\u003cbr /\u003e6. Soumil\u003cbr /\u003e7. Sophie\u003cbr /\u003e\u003cem\u003e\u003cspan style=\"color: #fd4e4e;\"\u003eUnconfirmed:\u003c/span\u003e\u003c/em\u003e\u003cbr /\u003e8. Aitor ?\u003cbr /\u003e9. Alfredo ?\u003cbr /\u003e10. Lea ?\u003c/p\u003e",
   "EntryType": "Trip",
   "Equipment": "",
   "MainImagePath": "https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Trip-2/main.webp",
   "RelatedEvents": [
     {
       "Description": "We will visit some magnificent beaches and walk through come anceint Nugares and natural caves.",
-      "Name": "Sardinia Trip: Hike between Caletta Fuili Cala di Luna",
+      "Name": "East Sardinia: Hike between Caletta Fuili Cala di Luna",
       "URL": "../../hike/hikes/Sardinia-Trip--Hike-between-Caletta-Fuili-Cala-di-Luna-Sardinia-Hike-1.html"
+    },
+    {
+      "Description": "The protected area with its numerous bays, sandy beaches and dune strips is popular with vacationers in southern Sardinia.",
+      "Name": "Southeast Sardinia: Sardinia Trip: Hike in Capo Carbonara",
+      "URL": "../../hike/hikes/Sardinia-Trip--Hike-in-Capo-Carbonara-Sardinia-Hike-2.html"
+    },
+    {
+      "Description": "We will hike among wild horses in the Parco della Giara and visit the ancient site at Su Nuraxi.",
+      "Name": "South-Central Sardinia : Hike to Parco della Giara",
+      "URL": "../../hike/hikes/South-Central-Sardinia---Hike-to-Parco-della-Giara-Sardinia-Hike-3.html"
     }
   ],
   "SubImages": [
@@ -39,7 +49,7 @@
   "TripEndDate": "23-04-2025",
   "TripName": "Easter Trip to Sardinia ",
   "TripStartDate": "16-04-2025",
-  "UniqueGoogleMapURL": "https://www.google.com/maps/d/viewer?mid=1HFXILaiMjXNeUwhYFlP_TjgLuevq_MI",
+  "UniqueGoogleMapURL": "trip-to-sardinia_78381",
   "UniqueReportURL": "",
   "UniqueTripID": "Trip-2"
 }

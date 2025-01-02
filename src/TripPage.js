@@ -64,14 +64,16 @@ const TripPage = ({ content }) => {
       React.createElement('div', { className: 'content-section' },
         React.createElement('h1', { className: 'trip-title  title-padding' }, content.TripName),
         
-        content.UniqueGoogleMapURL && React.createElement('div', { className: 'info-item  title-padding' },
-          React.createElement('h3', null, 'Location'),
-          React.createElement('a', {
-            href: content.UniqueGoogleMapURL,
-            target: '_blank',
-            rel: 'noopener noreferrer',
-            className: 'map-link'
-          }, '📍 View on Google Maps')
+        content.UniqueGoogleMapURL && React.createElement('div', { className: 'title-padding' },
+          React.createElement('h3', null, 'Map Footprint'),
+          React.createElement('iframe', {
+            src: `https://umap.openstreetmap.de/en/map/${content.UniqueGoogleMapURL}?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true`,
+            width: '100%',
+            height: '700',
+            frameBorder: '0',
+            scrolling: 'no',
+            className: 'komoot-frame'
+          })
         ),
         
         React.createElement('div', { className: 'info-item  title-padding' },
@@ -142,7 +144,6 @@ const TripPage = ({ content }) => {
             )
           )
         ),
-        
         content.RelatedEvents?.length > 0 && React.createElement('div', { className: 'related-events' },
           React.createElement('h3', {className: 'title-padding'}, 'Related Events'),
           React.createElement('div', { className: 'events-wrapper title-padding' },
