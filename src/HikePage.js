@@ -37,7 +37,7 @@ const HikePage = ({ content }) => {
     }),
     React.createElement(Toolbar),
     React.createElement('div', { className: 'main-content' },
-      React.createElement('div', { className: 'image-section title-padding' },
+      content.MainImagePath && React.createElement('div', { className: 'image-section title-padding' },
         React.createElement('img', { 
           src: content.MainImagePath, 
           alt: content.EventName,
@@ -45,9 +45,9 @@ const HikePage = ({ content }) => {
         })
       ),
       React.createElement('div', { className: 'content-section' },
-        React.createElement('h1', { className: 'event-title title-padding' }, content.EventName),
+        content.EventName && React.createElement('h1', { className: 'event-title title-padding' }, content.EventName),
         
-        React.createElement('div', { className: 'info-item title-padding' },
+        content.EventDate && React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Date'),
           React.createElement('p', null, content.EventDate)
         ),
@@ -64,28 +64,28 @@ const HikePage = ({ content }) => {
           })
         ),
         
-        React.createElement('div', { className: 'info-item title-padding' },
+        content.Description && React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Description'),
           React.createElement('div', { 
             dangerouslySetInnerHTML: { __html: content.Description } 
           })
         ),
         
-        React.createElement('div', { className: 'info-item title-padding' },
+        content.Transportation && React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Transportation'),
           React.createElement('div', { 
             dangerouslySetInnerHTML: { __html: content.Transportation } 
           })
         ),
         
-        React.createElement('div', { className: 'info-item title-padding' },
+        content.Equipment && React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Equipment'),
           React.createElement('div', { 
             dangerouslySetInnerHTML: { __html: content.Equipment } 
           })
         ),
         
-        React.createElement('div', { className: 'info-item title-padding' },
+        content.Costs && React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Costs'),
           React.createElement('div', { 
             dangerouslySetInnerHTML: { __html: content.Costs } 
@@ -93,7 +93,8 @@ const HikePage = ({ content }) => {
         ),
         
         content.SubImages?.length > 0 && React.createElement('div', { className: 'sub-images-container title-padding' },
-          React.createElement('div', { className: 'sub-images-wrapper title-padding' },
+          React.createElement('h3', null, 'Highlights'),
+          React.createElement('div', { className: 'sub-images-wrapper' },
             ...content.SubImages.map((img, index) => 
               React.createElement('div', { 
                 key: index,
@@ -109,7 +110,7 @@ const HikePage = ({ content }) => {
               )
             )
           ),
-          React.createElement('div', { className: 'pagination-numbers title-padding' },
+          React.createElement('div', { className: 'pagination-numbers ' },
             ...content.SubImages.map((_, index) =>
               React.createElement('button', {
                 key: index,

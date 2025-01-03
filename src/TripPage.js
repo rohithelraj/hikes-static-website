@@ -54,7 +54,7 @@ const TripPage = ({ content }) => {
     }),
     React.createElement(Toolbar),
     React.createElement('div', { className: 'main-content' },
-      React.createElement('div', { className: 'image-section' },
+      content.MainImagePath && React.createElement('div', { className: 'image-section' },
         React.createElement('img', { 
           src: content.MainImagePath, 
           alt: content.Description,
@@ -62,7 +62,7 @@ const TripPage = ({ content }) => {
         })
       ),
       React.createElement('div', { className: 'content-section' },
-        React.createElement('h1', { className: 'trip-title  title-padding' }, content.TripName),
+        content.TripName &&  React.createElement('h1', { className: 'trip-title  title-padding' }, content.TripName),
         
         content.UniqueGoogleMapURL && React.createElement('div', { className: 'title-padding' },
           React.createElement('h3', null, 'Map Footprint'),
@@ -76,40 +76,40 @@ const TripPage = ({ content }) => {
           })
         ),
         
-        React.createElement('div', { className: 'info-item  title-padding' },
+        content.TripStartDate && React.createElement('div', { className: 'info-item  title-padding' },
           React.createElement('h3', null, 'Dates'),
           React.createElement('p', null, `${content.TripStartDate} - ${content.TripEndDate}`)
         ),
         
-        React.createElement('div', { className: 'info-item title-padding' },
+        content.Description && React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Description'),
           React.createElement('div', { 
             dangerouslySetInnerHTML: { __html: content.Description } 
           })
         ),
         
-        React.createElement('div', { className: 'info-item title-padding' },
+        content.Accommodation && React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Accommodation'),
           React.createElement('div', { 
             dangerouslySetInnerHTML: { __html: content.Accommodation } 
           })
         ),
         
-        React.createElement('div', { className: 'info-item title-padding' },
+        content.Transportation && React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Transportation'),
           React.createElement('div', { 
             dangerouslySetInnerHTML: { __html: content.Transportation } 
           })
         ),
         
-        React.createElement('div', { className: 'info-item title-padding' },
+        content.Equipment && React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Equipment'),
           React.createElement('div', { 
             dangerouslySetInnerHTML: { __html: content.Equipment } 
           })
         ),
         
-        React.createElement('div', { className: 'info-item title-padding' },
+        content.Costs && React.createElement('div', { className: 'info-item title-padding' },
           React.createElement('h3', null, 'Costs'),
           React.createElement('div', { 
             dangerouslySetInnerHTML: { __html: content.Costs } 
@@ -117,6 +117,7 @@ const TripPage = ({ content }) => {
         ),
         
         content.SubImages?.length > 0 && React.createElement('div', { className: 'sub-images-container' },
+          React.createElement('h3', {className: 'title-padding'}, 'Highlights'),
           React.createElement('div', { className: 'sub-images-wrapper' },
             ...content.SubImages.map((img, index) => 
               React.createElement('div', { 
@@ -165,7 +166,7 @@ const TripPage = ({ content }) => {
                 )
               )
             ),
-            React.createElement('div', { className: 'pagination-numbers title-padding' },
+            React.createElement('div', { className: 'pagination-numbers' },
               ...content.RelatedEvents.map((_, index) =>
                 React.createElement('button', {
                   key: index,
