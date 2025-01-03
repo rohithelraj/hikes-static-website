@@ -33,7 +33,7 @@ const renderCalendarFunction = `
              month === today.getMonth() && 
              year === today.getFullYear();
     }
-  
+
     const daysInMonth = getDaysInMonth(month, year);
     const firstDayOfMonth = getFirstDayOfMonth(month, year);
     
@@ -67,18 +67,24 @@ const renderCalendarFunction = `
           week.push('<td class="p-2 border bg-gray-50"></td>');
         } else {
           const currentDate = new Date(year, month, dayCount);
-          const dayEvents = events.filter(event => 
-            currentDate >= new Date(event.start) && 
-            currentDate <= new Date(event.end)
-          );
+          currentDate.setHours(0, 0, 0, 0); // Normalize time part
+          
+          const dayEvents = events.filter(event => {
+            const eventStart = new Date(event.start);
+            const eventEnd = new Date(event.end);
+            eventStart.setHours(0, 0, 0, 0);
+            eventEnd.setHours(0, 0, 0, 0);
+            
+            return currentDate >= eventStart && currentDate <= eventEnd;
+          });
           
           let dayHTML = \`
-            <td class="p-2 border h-32 align-top \${isCurrentDay(dayCount) ? 'bg-yellow-50' : ''}">
+            <td class="p-2 border h-32 align-top \${isCurrentDay(dayCount) ? 'bg-yellow-50' : ''} overflow-auto">
               <div class="font-bold mb-1 \${isCurrentDay(dayCount) ? 'text-red-600' : ''}">\${dayCount}</div>
-              <div class="space-y-1">
+              <div class="space-y-1 max-h-28 overflow-y-auto">
                 \${dayEvents.map(event => \`
                   <a href="\${event.url}"
-                     class="block p-1 rounded text-xs hover:shadow \${
+                     class="block p-1 mb-1 rounded text-xs hover:shadow transition-all \${
                        event.type === 'trip' 
                          ? 'bg-blue-100 hover:bg-blue-200 text-blue-900' 
                          : 'bg-green-100 hover:bg-green-200 text-green-900'
@@ -115,8 +121,7 @@ const renderCalendarFunction = `
     \`;
     
     document.getElementById('calendar').innerHTML = calendarHTML;
-  }
-`;
+  }`;
 
 // Server-side rendering component
 const CalendarView = ({ trips, hikes }) => {
@@ -203,6 +208,11 @@ function generateHikesPage(hikes, currentPage, totalPages) {
       </body>
     </html>`;
 }
+function formatDateForCalendar(dateStr) {
+  if (!dateStr) return null;
+  const [day, month, year] = dateStr.split('-');
+  return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+}
 async function buildSite() {
   const contentDir = path.join(__dirname, 'content', 'reports');
   const tripsContentDir = path.join(__dirname, 'content', 'trips');
@@ -253,20 +263,20 @@ async function buildSite() {
     ...trips.map(t => ({
       id: t.content.UniqueTripID,
       title: t.content.TripName,
-      start: t.content.TripStartDate.split('-').reverse().join('-'),
-      end: t.content.TripEndDate.split('-').reverse().join('-'),
+      start: formatDateForCalendar(t.content.TripStartDate),
+      end: formatDateForCalendar(t.content.TripEndDate),
       type: 'trip',
       url: `./trip/trips/${t.content.TripName.replace(/[^a-zA-Z0-9]/g, '-')}-${t.content.UniqueTripID}.html`
     })),
     ...hikes.map(h => ({
       id: h.content.UniqueEventID,
       title: h.content.EventName,
-      start: h.content.EventDate.split('-').reverse().join('-'),
-      end: h.content.EventDate.split('-').reverse().join('-'),
+      start: formatDateForCalendar(h.content.EventDate),
+      end: formatDateForCalendar(h.content.EventDate), // Same as start for hikes
       type: 'hike',
       url: `./hike/hikes/${h.content.EventName.replace(/[^a-zA-Z0-9]/g, '-')}-${h.content.UniqueEventID}.html`
     }))
-  ];
+  ].filter(event => event.start && event.end);
 
   // Generate list pages
   const ITEMS_PER_PAGE = 6;
