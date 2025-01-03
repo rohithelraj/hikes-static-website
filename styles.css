@@ -307,7 +307,14 @@ body {
     font-size: 1rem !important;
     padding-left: 3em;
   }
-
+  .banner-content h3 {
+    padding-left: 3em;
+    padding-top: 1.5em;
+  }
+  .banner-content .banner-link {
+    margin-left: 3em;
+    margin-bottom: 2em;
+  }
   .sub-images-grid img,
   .sub-images-container img {
     height: 200px;

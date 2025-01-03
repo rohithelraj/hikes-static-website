@@ -444,7 +444,6 @@ async function buildSite() {
             <div class="banner-content">
               <h3>Upcoming</h3>
               <h1>${featuredItem.title}</h1>
-              <h4><time class="date" datetime="${featuredItem.displayDate}">${featuredItem.displayDate}</time></h4>
               <a href="${featuredItem.url}" class="banner-link">Go</a>
             </div>
           </div>
