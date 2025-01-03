@@ -19,27 +19,6 @@ body {
   align-items: center;
 }
 
- .title-padding{
-  padding-left: 46px;
- }
-
-@media (max-width: 768px) {
-  .toolbar {
-    width: 100%;
-    height: 60px;
-    bottom: 0;
-    top: auto;
-  }
-  
-  .nav-item {
-    writing-mode: horizontal-tb !important;
-    transform: none !important;
-    display: inline-block !important;
-    padding: 0 15px !important;
-    line-height: 60px !important;
-  }
-}
-
 .nav-item {
   display: block;
   width: 100%;
@@ -96,7 +75,8 @@ body {
 
 /* Responsive grids */
 .reports-grid,
-.trips-grid {
+.trips-grid,
+.hikes-grid {
   margin-left: 60px;
   padding: 20px;
   display: grid;
@@ -104,16 +84,9 @@ body {
   gap: 20px;
 }
 
-@media (max-width: 768px) {
-  .reports-grid,
-  .trips-grid {
-    margin-left: 0;
-    margin-bottom: 60px;
-  }
-}
-
 /* Cards */
-.report-card {
+.report-card,
+.hike-card {
   background: white;
   border-radius: 8px;
   overflow: hidden;
@@ -141,43 +114,113 @@ body {
   margin-left: 60px;
 }
 
-@media (max-width: 768px) {
-  .landing-content {
-    margin-left: 0;
-    margin-bottom: 60px;
-  }
-  
-  .hero-banner {
-    padding: 30px 20px !important;
-  }
-  
-  .banner-content h1 {
-    font-size: 2rem !important;
-  }
+/* Updated banner styles */
+.upcoming-section {
+  height: 120px;
+  display: flex;
+  background: #333333;
+  border-color: #b3b9c7;
 }
 
 .hero-banner {
   background: rgba(255, 255, 255, 0.85);
   color: #333333;
-  padding: 60px 40px;
+  padding: 20px;
   position: relative;
   z-index: 2;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.banner-content {
+  width: 100%;
 }
 
 .banner-content h1 {
-  font-size: 3rem;
-  margin: 0 0 1rem;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0 0 0.5rem;
+}
+
+.banner-link {
+  display: inline-block;
+  outline: 0;
+  text-align: center;
+  cursor: pointer;
+  padding: 0px 16px;
+  border-radius: 2px;
+  min-width: 80px;
+  height: 22px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(50, 49, 48);
+  font-size: 14px;
+  font-weight: 400;
+  box-sizing: border-box;
+  border: 1px solid rgb(138, 136, 134);
+  :hover {
+      background-color: rgb(243, 242, 241);
+      color: rgb(32, 31, 30);
+  }
+}
+
+.banner-link:hover {
+  background-color: #2563eb;
 }
 
 .hero-image {
-  height: calc(100vh - 240px);
+  height: 120px;
   overflow: hidden;
+  flex: 1;
 }
 
-@media (max-width: 768px) {
-  .hero-image {
-    height: 50vh;
-  }
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Calendar styles */
+.calendar-section {
+  padding: 1.5rem;
+  margin: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.calendar-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar-section th {
+  padding: 0.75rem;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  font-weight: 500;
+}
+
+.calendar-section td {
+  border: 1px solid #e5e7eb;
+  vertical-align: top;
+  padding: 0.5rem;
+  height: 100px;
+}
+
+.calendar-section button {
+  padding: 0.5rem 1rem;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.calendar-section button:hover {
+  background: #e5e7eb;
 }
 
 /* Sub-images and related content */
@@ -215,6 +258,33 @@ body {
   cursor: pointer;
 }
 
+/* Numbered pagination styles */
+.pagination-numbers {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.number-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.number-btn.active {
+  background: #333;
+  color: white;
+  border-color: #333;
+}
+
 /* Maps and iframes */
 .komoot-frame,
 .map-frame {
@@ -224,8 +294,44 @@ body {
 }
 
 @media (max-width: 768px) {
+  .landing-content {
+    margin-left: 0;
+    margin-bottom: 60px;
+  }
+  
+  .hero-banner {
+    padding: 30px 20px !important;
+  }
+  
+  .banner-content h1 {
+    font-size: 1rem !important;
+    padding-left: 3em;
+  }
+  .banner-content h3 {
+    padding-left: 3em;
+    padding-top: 1.5em;
+  }
+  .banner-content .banner-link {
+    margin-left: 3em;
+    margin-bottom: 2em;
+  }
+  .sub-images-grid img,
+  .sub-images-container img {
+    height: 200px;
+  }
+
   .komoot-frame,
   .map-frame {
     height: 300px;
   }
 }
+
+/* Utility classes */
+.title-padding {
+  padding-left: 46px;
+}
+
+.pagination-padding {
+  padding-left: 83px;
+}
+

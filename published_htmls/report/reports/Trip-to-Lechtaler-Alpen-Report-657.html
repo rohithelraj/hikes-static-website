@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+         <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Trip to Lechtaler Alpen</title>
+            <link rel="stylesheet" href="../../styles.css">
+          </head>
+          <body>
+            <div id="app"><div class="page-layout"><script>
+          document.addEventListener('DOMContentLoaded', function() {
+            function showImage(index) {
+              document.querySelectorAll('.sub-image-item').forEach(item => {
+                item.style.display = 'none';
+              });
+              document.querySelectorAll('.image-dot').forEach(dot => {
+                dot.classList.remove('active');
+              });
+              document.querySelector('.sub-image-item[data-index="' + index + '"]').style.display = 'block';
+              document.querySelector('.image-dot[data-index="' + index + '"]').classList.add('active');
+            }
+
+            document.querySelectorAll('.image-dot').forEach(dot => {
+              dot.addEventListener('click', function() {
+                showImage(this.getAttribute('data-index'));
+              });
+            });
+          });
+        </script><div class="toolbar"><nav><a href="../../index.html" class="nav-item">Home</a><a href="../../trip/tripLists/tripsList.html" class="nav-item">Trips</a><a href="../../hike/hikeLists/hikesList.html" class="nav-item">Hikes</a><a href="../../report/reportLists/reportsList.html" class="nav-item">Reports</a></nav></div><div class="main-content"><div class="image-section"><img src="https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Report-657/main.webp" alt="Trip to Lechtaler Alpen" class="main-image"/></div><div class="content-section"><h1 class="report-title">Trip to Lechtaler Alpen</h1><div class="info-item"><h3>Location</h3><a href="dasdasd" target="_blank" rel="noopener noreferrer" class="map-link">📍 View on Google Maps</a></div><div class="info-item"><h3>Date</h3><p>16-09-2024</p></div><div class="info-item"><h3>Description</h3><p>Much of Sardinia’s landscape is made up of exposed granite rock, often
+resembling something from another planet. Make like Neil Armstrong as
+you venture into the Codula di Luna – the “Valley of the Moon” – on one of
+the island’s top hiking trails. The trek through the Valle della Luna at Capo
+Testa (see Santa Teresa Gallura) is equally otherworldly, with footpaths
+winding between boulders that gradually change shape according to the
+prevailing wind and sea.</p></div><div class="info-item"><h3>Type</h3><p>Trip</p></div><div class="sub-images-container"><div class="sub-images-wrapper"><div class="sub-image-item" data-index="0" style="display:block"><div class="sub-image-card"><img src="https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Report-657/subImages/image2.webp" alt="CODULA DI LUNA"/><h4>CODULA DI LUNA</h4><p>Steep cliffs, rocky spires and deep caves dominate the
+phenomenal karst landscape of Codula di Luna, home to a
+stunning hiking trail that ends at the impeccably beautiful Cala
+Luna beach.</p></div></div></div><div class="pagination-dots"><button class="pagination-dot image-dot active" data-index="0"></button></div></div><div class="info-item"><h3>Location Map</h3><iframe src="dasdasd" width="100%" height="700" frameBorder="0" scrolling="no" class="map-frame"></iframe></div><div class="related-links"><h3>Related Links</h3><div class="links"><a href="fddfgdfg" class="link-item">View Event</a><a href="popip" class="link-item">View Trip</a></div></div></div></div></div></div>
+          </body>
+        </html>

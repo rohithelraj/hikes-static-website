@@ -1,35 +1,180 @@
-
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Adventure Journal</title>
-        <link rel="stylesheet" href="./styles.css">
-      </head>
-      <body>
-        <div class="page-layout">
-          <div class="toolbar">
-            <nav>
-              <a href="index.html" class="nav-item">Home</a>
-              <a href="./trip/tripLists/tripsList.html" class="nav-item">Trips</a>
-              <a href="./event/eventLists/eventList.html" class="nav-item">Events</a>
-              <a href="./report/reportLists/reportsList.html" class="nav-item">Reports</a>
-            </nav>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Journal</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="page-layout">
+      <div class="toolbar">
+        <nav>
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="./trip/tripLists/tripsList.html" class="nav-item">Trips</a>
+          <a href="./hike/hikeLists/hikesList.html" class="nav-item">Hikes</a>
+          <a href="./report/reportLists/reportsList.html" class="nav-item">Reports</a>
+        </nav>
+      </div>
+      
+      <main class="landing-content">
+        <section class="upcoming-section" aria-label="Featured Adventure">
+          <div class="hero-banner title-padding">
+            <div class="banner-content">
+              <h3>Upcoming</h3>
+              <h1>Easter Trip to Sardinia </h1>
+              <a href="./trip/trips/Easter-Trip-to-Sardinia--Trip-2.html" class="banner-link">Go</a>
+            </div>
           </div>
-          <div class="landing-content">
-            <div class="hero-banner">
-              <div class="banner-content title-padding">
-                <h1>Easter Trip to Sardinia </h1>
-                <p class="date">16-04-2025</p>
-                <a href="./trip/trips/Easter-Trip-to-Sardinia--Trip-2.html" class="banner-link">View Details</a>
+          <div class="hero-image title-padding">
+            <img src="https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Trip-2/main.webp" alt="Easter Trip to Sardinia " loading="eager">
+          </div>
+        </section>
+
+        <section class="calendar-container title-padding" aria-label="Adventure Calendar">
+          <div id="calendar"></div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Initialize calendar -->
+    <script>
+      window.calendarEvents = [{"id":"Trip-1","title":"Late Summer Trip To India","start":"2025-08-03","end":"2025-08-16","type":"trip","url":"./trip/trips/Late-Summer-Trip-To-India-Trip-1.html"},{"id":"Trip-2","title":"Easter Trip to Sardinia ","start":"2025-04-16","end":"2025-04-23","type":"trip","url":"./trip/trips/Easter-Trip-to-Sardinia--Trip-2.html"},{"id":"Sardinia-Hike-10","title":"East Sardinia : Hike through the Turr'e Seu Nature Park to the rice grain beach Spiaggia Maimoni","start":"2025-04-20","end":"2025-04-20","type":"hike","url":"./hike/hikes/East-Sardinia---Hike-through-the-Turr-e-Seu-Nature-Park-to-the-rice-grain-beach-Spiaggia-Maimoni-Sardinia-Hike-10.html"},{"id":"Sardinia-Hike-11","title":"Western Sardinia : Hike to Monte Nova San Giovanni","start":"2025-04-18","end":"2025-04-18","type":"hike","url":"./hike/hikes/Western-Sardinia---Hike-to-Monte-Nova-San-Giovanni-Sardinia-Hike-11.html"},{"id":"Sardinia-Hike-1","title":"Sardinia Trip: Hike between Caletta Fuili Cala di Luna","start":"2025-04-17","end":"2025-04-17","type":"hike","url":"./hike/hikes/Sardinia-Trip--Hike-between-Caletta-Fuili-Cala-di-Luna-Sardinia-Hike-1.html"},{"id":"Sardinia-Hike-2","title":"Sardinia Trip: Hike in Capo Carbonara","start":"2025-04-18","end":"2025-04-18","type":"hike","url":"./hike/hikes/Sardinia-Trip--Hike-in-Capo-Carbonara-Sardinia-Hike-2.html"},{"id":"Sardinia-Hike-3","title":"South-Central Sardinia : Hike to Parco della Giara","start":"2025-04-19","end":"2025-04-19","type":"hike","url":"./hike/hikes/South-Central-Sardinia---Hike-to-Parco-della-Giara-Sardinia-Hike-3.html"},{"id":"Sardinia-Hike-4","title":"East Sardinia: Hike to Punta La Marmora (1834m), the highest point in Sardinia","start":"2025-04-20","end":"2025-04-20","type":"hike","url":"./hike/hikes/East-Sardinia--Hike-to-Punta-La-Marmora--1834m---the-highest-point-in-Sardinia-Sardinia-Hike-4.html"},{"id":"Sardinia-Hike-5","title":"Southwest Sardinia : Hike to Cascate di Muru Mannu","start":"2025-04-21","end":"2025-04-21","type":"hike","url":"./hike/hikes/Southwest-Sardinia---Hike-to-Cascate-di-Muru-Mannu-Sardinia-Hike-5.html"},{"id":"Sardinia-Hike-6","title":"South Sardinia : Hike to the Archaeological areas of Antas and Mannau valleys","start":"2025-04-22","end":"2025-04-22","type":"hike","url":"./hike/hikes/South-Sardinia---Hike-to-the-Archaeological-areas-of-Antas-and-Mannau-valleys-Sardinia-Hike-6.html"},{"id":"Sardinia-Hike-7","title":"North Sardinia : Hike from Monte Tinnari to Costa Paradiso","start":"2025-04-17","end":"2025-04-17","type":"hike","url":"./hike/hikes/North-Sardinia---Hike-from-Monte-Tinnari-to-Costa-Paradiso-Sardinia-Hike-7.html"},{"id":"Sardinia-Hike-8","title":"North Sardinia : Hike through the Valle della Luna to the bays of Capo Testa","start":"2025-04-18","end":"2025-04-18","type":"hike","url":"./hike/hikes/North-Sardinia---Hike-through-the-Valle-della-Luna-to-the-bays-of-Capo-Testa-Sardinia-Hike-8.html"},{"id":"Sardinia-Hike-9","title":"Eastern Sardinia : Hike in the Cape of San Marco","start":"2025-04-20","end":"2025-04-20","type":"hike","url":"./hike/hikes/Eastern-Sardinia---Hike-in-the-Cape-of-San-Marco-Sardinia-Hike-9.html"}];
+      
+  function renderCalendar(month, year) {
+    const events = window.calendarEvents;
+    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'];
+    
+    function getDaysInMonth(month, year) {
+      return new Date(year, month + 1, 0).getDate();
+    }
+    
+    function getFirstDayOfMonth(month, year) {
+      return new Date(year, month, 1).getDay();
+    }
+    
+    function isCurrentDay(day) {
+      const today = new Date();
+      return day === today.getDate() && 
+             month === today.getMonth() && 
+             year === today.getFullYear();
+    }
+
+    const daysInMonth = getDaysInMonth(month, year);
+    const firstDayOfMonth = getFirstDayOfMonth(month, year);
+    
+    let calendarHTML = `
+      <div class="max-w-6xl mx-auto px-4 py-6">
+        <div class="flex justify-between items-center mb-6">
+          <button onclick="handlePrevMonth()" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded transition-colors">←</button>
+          <h2 class="text-2xl font-bold">${monthNames[month]} ${year}</h2>
+          <button onclick="handleNextMonth()" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded transition-colors">→</button>
+        </div>
+        <div class="border rounded-lg shadow overflow-hidden bg-white">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-gray-50">
+                ${['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+                  .map(day => `<th class="p-2 border text-gray-600">${day}</th>`)
+                  .join('')}
+              </tr>
+            </thead>
+            <tbody>
+    `;
+    
+    let dayCount = 1;
+    let calendar = [];
+    
+    while (dayCount <= daysInMonth) {
+      let week = [];
+      
+      for (let i = 0; i < 7; i++) {
+        if ((dayCount === 1 && i < firstDayOfMonth) || dayCount > daysInMonth) {
+          week.push('<td class="p-2 border bg-gray-50"></td>');
+        } else {
+          const currentDate = new Date(year, month, dayCount);
+          currentDate.setHours(0, 0, 0, 0); // Normalize time part
+          
+          const dayEvents = events.filter(event => {
+            const eventStart = new Date(event.start);
+            const eventEnd = new Date(event.end);
+            eventStart.setHours(0, 0, 0, 0);
+            eventEnd.setHours(0, 0, 0, 0);
+            
+            return currentDate >= eventStart && currentDate <= eventEnd;
+          });
+          
+          let dayHTML = `
+            <td class="p-2 border h-32 align-top ${isCurrentDay(dayCount) ? 'bg-yellow-50' : ''} overflow-auto">
+              <div class="font-bold mb-1 ${isCurrentDay(dayCount) ? 'text-red-600' : ''}">${dayCount}</div>
+              <div class="space-y-1 max-h-28 overflow-y-auto">
+                ${dayEvents.map(event => `
+                  <a href="${event.url}"
+                     class="block p-1 mb-1 rounded text-xs hover:shadow transition-all ${
+                       event.type === 'trip' 
+                         ? 'bg-blue-100 hover:bg-blue-200 text-blue-900' 
+                         : 'bg-green-100 hover:bg-green-200 text-green-900'
+                     }"
+                     title="${event.title}">
+                    ${event.title.length > 20 ? event.title.substring(0, 20) + '...' : event.title}
+                  </a>
+                `).join('')}
               </div>
-            </div>
-            <div class="hero-image">
-              <img src="https://hikes-trailfinder-website-images.s3.us-east-1.amazonaws.com/Trip-2/main.webp" alt="Easter Trip to Sardinia ">
-            </div>
+            </td>
+          `;
+          week.push(dayHTML);
+          dayCount++;
+        }
+      }
+      calendar.push(`<tr>${week.join('')}</tr>`);
+    }
+    
+    calendarHTML += calendar.join('') + `
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-4 flex gap-6 justify-center text-sm">
+          <div class="flex items-center gap-2">
+            <div class="w-4 h-4 bg-blue-100 border border-blue-200 rounded"></div>
+            <span>Trips</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-4 h-4 bg-green-100 border border-green-200 rounded"></div>
+            <span>Hikes</span>
           </div>
         </div>
-      </body>
-    </html>
-  
+      </div>
+    `;
+    
+    document.getElementById('calendar').innerHTML = calendarHTML;
+  }
+      
+      let currentMonth = new Date().getMonth();
+      let currentYear = new Date().getFullYear();
+      
+      function handlePrevMonth() {
+        if (currentMonth === 0) {
+          currentMonth = 11;
+          currentYear--;
+        } else {
+          currentMonth--;
+        }
+        renderCalendar(currentMonth, currentYear);
+      }
+      
+      function handleNextMonth() {
+        if (currentMonth === 11) {
+          currentMonth = 0;
+          currentYear++;
+        } else {
+          currentMonth++;
+        }
+        renderCalendar(currentMonth, currentYear);
+      }
+      
+      window.onload = () => renderCalendar(currentMonth, currentYear);
+    </script>
+  </body>
+</html>

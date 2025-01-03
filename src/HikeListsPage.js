@@ -4,19 +4,19 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
   
   return React.createElement('div', { className: 'pagination' },
-    React.createElement('button', { 
+    React.createElement('a', { 
       className: 'page-btn',
       disabled: currentPage === 1,
       onClick: () => onPageChange(currentPage - 1)
     }, '←'),
     pages.map(page => 
-      React.createElement('button', {
+      React.createElement('a', {
         key: page,
         className: `page-btn ${currentPage === page ? 'active' : ''}`,
         onClick: () => onPageChange(page)
       }, page)
     ),
-    React.createElement('button', {
+    React.createElement('a', {
       className: 'page-btn',
       disabled: currentPage === totalPages,
       onClick: () => onPageChange(currentPage + 1)
