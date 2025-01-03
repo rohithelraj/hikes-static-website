@@ -19,32 +19,32 @@ const TripPage = ({ content }) => {
               document.querySelectorAll('.sub-image-item').forEach(item => {
                 item.style.display = 'none';
               });
-              document.querySelectorAll('.image-dot').forEach(dot => {
-                dot.classList.remove('active');
+              document.querySelectorAll('.image-number').forEach(num => {
+                num.classList.remove('active');
               });
               document.querySelector('.sub-image-item[data-index="' + index + '"]').style.display = 'block';
-              document.querySelector('.image-dot[data-index="' + index + '"]').classList.add('active');
+              document.querySelector('.image-number[data-index="' + index + '"]').classList.add('active');
             }
 
             function showEvent(index) {
               document.querySelectorAll('.event-item').forEach(item => {
                 item.style.display = 'none';
               });
-              document.querySelectorAll('.event-dot').forEach(dot => {
-                dot.classList.remove('active');
+              document.querySelectorAll('.event-number').forEach(num => {
+                num.classList.remove('active');
               });
               document.querySelector('.event-item[data-index="' + index + '"]').style.display = 'block';
-              document.querySelector('.event-dot[data-index="' + index + '"]').classList.add('active');
+              document.querySelector('.event-number[data-index="' + index + '"]').classList.add('active');
             }
 
-            document.querySelectorAll('.image-dot').forEach(dot => {
-              dot.addEventListener('click', function() {
+            document.querySelectorAll('.image-number').forEach(num => {
+              num.addEventListener('click', function() {
                 showImage(this.getAttribute('data-index'));
               });
             });
 
-            document.querySelectorAll('.event-dot').forEach(dot => {
-              dot.addEventListener('click', function() {
+            document.querySelectorAll('.event-number').forEach(num => {
+              num.addEventListener('click', function() {
                 showEvent(this.getAttribute('data-index'));
               });
             });
@@ -77,7 +77,6 @@ const TripPage = ({ content }) => {
         ),
         
         React.createElement('div', { className: 'info-item  title-padding' },
-    
           React.createElement('h3', null, 'Dates'),
           React.createElement('p', null, `${content.TripStartDate} - ${content.TripEndDate}`)
         ),
@@ -134,13 +133,13 @@ const TripPage = ({ content }) => {
               )
             )
           ),
-          React.createElement('div', { className: 'pagination-dots title-padding' },
+          React.createElement('div', { className: 'pagination-numbers title-padding' },
             ...content.SubImages.map((_, index) =>
               React.createElement('button', {
                 key: index,
-                className: `pagination-dot image-dot ${index === 0 ? 'active' : ''}`,
+                className: `number-btn image-number ${index === 0 ? 'active' : ''}`,
                 'data-index': index
-              })
+              }, index + 1)
             )
           )
         ),
@@ -166,13 +165,13 @@ const TripPage = ({ content }) => {
                 )
               )
             ),
-            React.createElement('div', { className: 'pagination-dots title-padding' },
+            React.createElement('div', { className: 'pagination-numbers title-padding' },
               ...content.RelatedEvents.map((_, index) =>
                 React.createElement('button', {
                   key: index,
-                  className: `pagination-dot event-dot ${index === 0 ? 'active' : ''}`,
+                  className: `number-btn event-number ${index === 0 ? 'active' : ''}`,
                   'data-index': index
-                })
+                }, index + 1)
               )
             )
           )
