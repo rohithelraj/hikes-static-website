@@ -49,9 +49,8 @@ const HikeListsPage = ({ hikes, currentPage, totalPages }) => {
               React.createElement('div', { className: 'card-content' },
                 React.createElement('h2', null, hike.EventName),
                 React.createElement('p', { className: 'date' }, hike.EventDate),
-                React.createElement('p', { className: 'description' }, 
-                  hike.Description ? `${hike.Description.substring(0, 150)}...` : ''
-                ),
+                React.createElement('div', {dangerouslySetInnerHTML: { __html: hike.Description ? `${hike.Description.substring(0, 150)}...` : '' }} 
+                              ),
                 React.createElement('a', { 
                   href: `../hikes/${hike.EventName.replace(/[^a-zA-Z0-9]/g, '-')}-${hike.UniqueEventID}.html`,
                   className: 'continue-reading'

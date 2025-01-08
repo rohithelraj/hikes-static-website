@@ -46,8 +46,7 @@ const TripListPage = ({ trips, currentPage, totalPages }) => {
               React.createElement('p', { className: 'date' }, 
                 `${trip.TripStartDate} - ${trip.TripEndDate}`
               ),
-              React.createElement('div', { className: 'description' }, 
-                trip.Description ? `${trip.Description.substring(0, 150)}...` : ''
+              React.createElement('div', {dangerouslySetInnerHTML: { __html: trip.Description ? `${trip.Description.substring(0, 150)}...` : '' }} 
               ),
               React.createElement('a', { 
                 href: `../trips/${trip.TripName.replace(/[^a-zA-Z0-9]/g, '-')}-${trip.UniqueTripID}.html`,

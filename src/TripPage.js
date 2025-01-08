@@ -129,7 +129,9 @@ const TripPage = ({ content }) => {
                 React.createElement('div', { className: 'sub-image-card' },
                   React.createElement('img', { src: img.URL, alt: img.Name }),
                   React.createElement('h4', null, img.Name),
-                  React.createElement('p', null, img.Description)
+                  React.createElement('div', { 
+                    dangerouslySetInnerHTML: { __html: img.Description } 
+                  })
                 )
               )
             )
